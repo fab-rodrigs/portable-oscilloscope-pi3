@@ -56,3 +56,18 @@
 - Outros periféricos: ~50 mA  
 **Consumo total estimado:** ~300 mA @ 5V → autonomia prevista ~6 h com bateria 2000 mAh.
 
+# Diagrama de Blocos – Osciloscópio Portátil
+
+```mermaid
+flowchart LR
+    A[Sinal de Entrada] --> B[Condicionamento de Sinal]
+    B --> C[ADC - Microcontrolador]
+    C --> D[Firmware de Processamento]
+    D --> E[Tela Touchscreen]
+    D --> F[Comunicação com PC]
+    G[Bateria] --> H[Circuito de Carregamento USB]
+    H --> I[Alimentação do Sistema]
+    I --> B
+    I --> C
+    I --> E
+
