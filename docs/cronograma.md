@@ -38,3 +38,22 @@
 - Validação externa com usuários.  
 - Produto final + lições aprendidas.  
 - Relatório final, vídeo de demonstração e documentação completa.  
+
+---
+# Cronograma Detalhado – Etapa 1
+
+### Semana 1 (09/09 a 15/09)
+- Elisa: pesquisa microcontroladores e protocolos de comunicação.  
+- Fabricio: estudo de tipos de bateria e carregamento USB.  
+- Matheus: versão inicial do diagrama de blocos.  
+
+### Semana 2 (16/09 a 22/09)
+- Elisa: análise de ADCs, taxas de amostragem e integração com touch screen.  
+- Fabricio: cálculo de consumo energético e esquemas de carregamento.  
+- Matheus: revisão do diagrama de blocos e requisitos funcionais.  
+
+### Semana 3 (23/09 a 25/09)
+- Consolidação do relatório de requisitos.  
+- Revisão geral do cronograma.  
+- Finalização da documentação no GitHub.  
+
