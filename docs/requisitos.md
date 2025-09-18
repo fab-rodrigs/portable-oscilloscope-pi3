@@ -43,15 +43,16 @@
 - Bateria LiPo (alta densidade energética e compacta).
 
 ## Orçamento Preliminar
-- Microcontrolador: ~R$ 80  
-- Touchscreen: ~R$ 120  
-- Bateria LiPo: ~R$ 50  
-- Circuito de carregamento USB: ~R$ 40  
-- Componentes diversos: ~R$ 100  
-**Total estimado:** ~R$ 390  
+- Microcontrolador: ~R$ ?
+- Touchscreen: ~R$ ?  
+- Bateria LiPo: ~R$ ? 
+- Circuito de carregamento USB: ~R$ ? 
+- Componentes diversos: ~R$ ? 
+**Total estimado:** ~R$ ?  
 
 ## Consumo Energético (inicial)
 - Microcontrolador: ~100 mA  
 - Tela Touch: ~150 mA  
 - Outros periféricos: ~50 mA  
 **Consumo total estimado:** ~300 mA @ 5V → autonomia prevista ~6 h com bateria 2000 mAh.
+
