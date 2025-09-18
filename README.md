@@ -1,13 +1,39 @@
-# portable-oscilloscope-pi3
-Este repositório contém a documentação e o material do projeto de um osciloscópio portátil, desenvolvido como parte da disciplina de Projeto Integrador III.
+# Osciloscópio Portátil
 
-## Visão Geral do Projeto
+Este projeto faz parte da disciplina **Projeto Integrador III** do curso de Engenharia Eletrônica.  
+O objetivo é desenvolver um **osciloscópio portátil** com interface touch, comunicação com PC e sistema de bateria integrado.
 
+## 👥 Membros do grupo
+- Elisa  
+- Fabricio  
+- Matheus  
 
-## Membros do Grupo
+## 🎯 Objetivos do projeto
+- Desenvolver um osciloscópio portátil funcional e de baixo custo.  
+- Implementar interface de visualização em **touch screen**.  
+- Garantir portabilidade através de bateria recarregável via USB.  
+- Estabelecer comunicação com PC para análise de dados.  
+- Projetar um **case robusto e ergonômico**.  
 
-    Elisa
+## 📦 Entregas da Etapa 1
+- Relatório de requisitos atualizado (hardware, software, comunicação, case).  
+- Pesquisa sobre componentes (microcontrolador, bateria, carregamento, touchscreen, protocolos de comunicação).  
+- Justificativa de escolhas de componentes com orçamentos preliminares.  
+- Cálculos iniciais de consumo energético.  
+- Diagrama de blocos revisado.  
+- Cronograma do projeto.  
 
-    Fabricio
+## 📅 Cronograma
+- Apresentação Etapa 1: **25/09**  
+- Apresentação Etapa 2: **16/10**  
+- Apresentação Etapa 3: **13/11**  
+- Apresentação Etapa 4: **18/12**  
 
-    Matheus
+## 🛠️ Novos Componentes (em estudo)
+- Microcontrolador principal (em definição)  
+- Módulo de comunicação (em definição)  
+- Touchscreen  
+- Circuito de carregamento USB + bateria recarregável  
+
+---
+📌 A documentação detalhada pode ser encontrada na pasta [`docs/`](docs/).
