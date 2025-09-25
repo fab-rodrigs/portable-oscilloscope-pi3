@@ -3,7 +3,7 @@
 Este projeto faz parte da disciplina **Projeto Integrador III** do curso de Engenharia Eletrônica.  
 O objetivo é desenvolver um **osciloscópio portátil** com interface touch, comunicação com PC e sistema de bateria integrado.
 
-![Diagrama de Blocos do Projeto](entrega1/docs/Diagrama1.png)
+![Diagrama de Blocos do Projeto](docs/etapa-1/Diagrama1.png)
 
 ## 👥 Membros do grupo
 - Elisa  
