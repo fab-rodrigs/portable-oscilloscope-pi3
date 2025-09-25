@@ -11,7 +11,7 @@
 
 ## 2. Tela + touch
 - **Parte sugerida:** Display LCD TFT 2.4" — boa disponibilidade, bibliotecas e performance. Backlight LEDs máximo 300 mA.
-- **Integração:** SPI (MOSI, SCLK, CS, DC, RST) + CS touch (SPI or separate ADC). DMA para transferir bitmap para display.
+- **Integração:** SPI (MOSI, SCLK, CS, DC, RST) + CS touch (SPI or separate ADC). 
 
 ---
 
@@ -66,6 +66,7 @@
 - [Datasheet MCP6002](https://www.microchip.com/en-us/product/MCP6002)  
 - [Datasheet CD74HC4052](https://www.ti.com/lit/ds/symlink/cd74hc4052.pdf)  
 - [Datasheet ADS8327](https://www.ti.com/lit/ds/symlink/ads8327.pdf) / [ADS8331](https://www.ti.com/lit/ds/symlink/ads8331.pdf)  
+
 
 
 
