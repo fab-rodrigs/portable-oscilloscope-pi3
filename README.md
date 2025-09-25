@@ -31,9 +31,9 @@ O objetivo é desenvolver um **osciloscópio portátil** com interface touch, co
 - Apresentação Etapa 3: **13/11**  
 - Apresentação Etapa 4: **18/12**  
 
-## 🛠️ Novos Componentes (em estudo)
-- Microcontrolador principal (em definição)  
-- Módulo de comunicação (em definição)  
+## 🛠️ Componentes
+- Microcontrolador principal FRDM-K64F  
+- Comunicação SPI e Serial  
 - Touchscreen  
 - Circuito de carregamento USB + bateria recarregável  
 
