@@ -24,7 +24,7 @@ A placa FRDM-K64F conta com interface USB OTG integrada, que pode ser configurad
 
 ## Monitoramento da Bateria via pino no microcontrolador
 
-![Circuito de monitoramento de bateria](etapa-1/circuito_entrada_AD.png)
+![Circuito de monitoramento de bateria](docs/etapa-1/circuito_entrada_AD.png)
 
 O circuito mostrado permite medir a tensão da bateria sem manter o divisor resistivo sempre ligado, reduzindo o consumo em repouso. O divisor resistivo é formado por R5 (220 kΩ) e R6 (470 kΩ), gerando uma tensão proporcional à da bateria adequada para o ADC do K64F (referência de 3,3 V). Com esses valores, a leitura de uma bateria Li-ion variando de 3,0 a 4,2 V resulta em ~2,04 a 2,86 V no pino AD, mantendo margem de segurança abaixo do limite de 3,3 V.
 
