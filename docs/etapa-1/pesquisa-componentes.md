@@ -74,7 +74,7 @@
 
 - **Analog switches (74HC4052):** static few μA, switching transients negligible for continuous power. Assume **<1 mA**.
 
-- **Charge pump (ICL7660) — if used:** **1–5 mA** typical depending load. Use **3 mA** if enabled.
+- **Charge pump (ICL7660) — se usado:** **1–5 mA** carga típica. **3 mA** se habilitado.
 
 - **Misc (LED indicators, sensors, regulators inefficiency):** **~5–15 mA**
 
@@ -101,7 +101,7 @@
 3. **Proteção de entrada**: TVS + diodos clamp + resistor série (100–5kΩ) para proteger ADC e MCU. Inclua fusível lento ou PTC no conector BNC.
 4. **Power path**: para carregar e alimentar simultaneamente, considerar ideal‑diode circuit (MOSFET) ou power multiplexer, evitando que TP4056 dissipe todo o calor no LDO.
 5. **Layout**: separar planos analógico/digital, star ground perto do conector BNC, decouplagem próxima a ICs (100 nF + 10 μF). Minimizar loops de retorno de sinal de alta frequência.
-6. **Firmware design**: ADC via PDB/timer + DMA; buffer circular; trigger por software/hardware; display render com DMA e rolagem parcial. Use low‑power modes para reduzir consumo quando o instrumento está inativo.
+6. **Firmware design**: ADC via PDB/timer + DMA; buffer circular; trigger por software/hardware; display render com DMA e rolagem parcial. Low‑power modes para reduzir consumo quando o instrumento está inativo.
 
 ---
 
@@ -121,4 +121,5 @@
 - MCP6002 op amp datasheet.
 - 74HC4052 datasheet.
 - ADS8327 / ADS8331 ADC family.
+
 
