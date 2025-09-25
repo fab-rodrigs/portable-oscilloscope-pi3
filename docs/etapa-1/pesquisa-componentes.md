@@ -24,12 +24,7 @@
 ## 4. ADC — opções e integração (crítico para desempenho)
 ### 4.1 Usar ADC interno do K64F
 - **Prós:** menos custo; uso direto do MCU (PDB/timers/DMA).  
-- **Contras:** taxa por canal e ruído podem limitar a banda prática; para >250–500 kS/s por canal verifique datasheet. O K64F suporta conversão rápida (sub‑μs por conversão dependendo resolução) mas usar differential/sampling em altas taxas precisa de configuração cuidadosa.
-
-### 4.2 ADC externo SAR recomendado (quando precisar de 16‑bit / 500 kS/s)
-- **Opções:** TI ADS8327 / ADS8331 / ADS8329 series (16‑bit, 500 kS/s, variantes 1ch/4ch, consumo baixo). Esses chips oferecem melhor S/N e interface SPI compatível com MCU. Preço unitário (DigiKey/Mouser) ~US$8–$20 dependendo do modelo e embalagem; módulos e EVMs também estão disponíveis.
-- **Integração:** ADC externo em SPI (ou serial parallel) → usar DMA para coletar dados para RAM; gerar clock de conversão compatível; cuidar do layout e do RC anti‑aliasing simétrico se operar em differential/pseudo‑bipolar.
-
+- **Contras:** taxa por canal e ruído podem limitar a banda prática; para > 400 kS/s por canal. O K64F suporta conversão rápida (sub‑μs por conversão dependendo resolução) mas usar differential/sampling em altas taxas precisa de configuração cuidadosa, portanto foi definido um range de 100KHz de funcionamento.
 ---
 
 ## 5. Front‑end analógico (componentes principais)
@@ -66,6 +61,7 @@
 - [Datasheet MCP6002](https://www.microchip.com/en-us/product/MCP6002)  
 - [Datasheet CD74HC4052](https://www.ti.com/lit/ds/symlink/cd74hc4052.pdf)  
 - [Datasheet ADS8327](https://www.ti.com/lit/ds/symlink/ads8327.pdf) / [ADS8331](https://www.ti.com/lit/ds/symlink/ads8331.pdf)  
+
 
 
 
