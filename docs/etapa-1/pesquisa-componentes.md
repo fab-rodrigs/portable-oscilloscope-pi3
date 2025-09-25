@@ -12,14 +12,14 @@
 
 ## 2. Tela + touch
 - **Parte sugerida:** 2.8″ SPI ILI9341 + XPT2046 (resistive touch) — boa disponibilidade, bibliotecas e performance. Display controller consome ~10 mA; backlight LEDs tipicamente 50–100 mA dependendo brilho. Controlar backlight com PWM.
-- **Integração:** SPI (MOSI, SCLK, CS, DC, RST) + CS touch (SPI or separate ADC). Use DMA para transferir bitmap para display.
+- **Integração:** SPI (MOSI, SCLK, CS, DC, RST) + CS touch (SPI or separate ADC). DMA para transferir bitmap para display.
 - **Preço estimado:** módulos comerciais entre US$6–20 (varia por fornecedor e inclusão de touch).
 
 ---
 
 ## 3. Fonte de carga / bateria
-- **Carregador:** TP4056 module (1A configurable via Rprog) + proteção DW01 / dual MOSFETs para proteção de bateria; simples e barato. Use módulo com proteção (recomendado).
-- **Recomendação de bateria:** 1× 18650 (2000–3500 mAh) ou pack Li‑ion 3.7V. Para portabilidade, uma célula 18650 é prática. Use circuito de power path (ideal diode) se quiser alimentar e carregar ao mesmo tempo com menos stress térmico.
+- **Carregador:** TP4056 module (1A configurable via Rprog) + proteção DW01 / dual MOSFETs para proteção de bateria; simples e barato. Módulo com proteção.
+- **Recomendação de bateria:** 1× 18650 (2000–3500 mAh) ou pack Li‑ion 3.7V. Para portabilidade, uma célula 18650 é prática. Circuito de power path (ideal diode) se quiser alimentar e carregar ao mesmo tempo com menos stress térmico.
 - **Preço estimado:** TP4056 módulo com proteção ≈ US$1–4; 18650 cell ≈ US$4–8 dependendo capacidade.
 
 ---
@@ -115,11 +115,12 @@
 ---
 
 ## Referências / Datasheets citadas
-- FRDM‑K64F user guide / K64 datasheet.
-- TP4056 datasheet / modules.
-- ILI9341 module and datasheet.
-- MCP6002 op amp datasheet.
-- 74HC4052 datasheet.
-- ADS8327 / ADS8331 ADC family.
+- [Datasheet FRDM-K64F / Kinetis K64](https://www.nxp.com/design/development-boards/freedom-development-boards/mcu-boards/freedom-development-platform-for-kinetis-k64-k63-and-k24-mcus:FRDM-K64F)  
+- [Datasheet TP4056](https://www.electronics-lab.com/wp-content/uploads/2016/07/tp4056.pdf)  
+- [Datasheet ILI9341](https://cdn-shop.adafruit.com/datasheets/ILI9341.pdf)  
+- [Datasheet MCP6002](https://www.microchip.com/en-us/product/MCP6002)  
+- [Datasheet CD74HC4052](https://www.ti.com/lit/ds/symlink/cd74hc4052.pdf)  
+- [Datasheet ADS8327](https://www.ti.com/lit/ds/symlink/ads8327.pdf) / [ADS8331](https://www.ti.com/lit/ds/symlink/ads8331.pdf)  
+
 
 
