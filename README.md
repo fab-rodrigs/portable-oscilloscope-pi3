@@ -39,3 +39,20 @@ O objetivo é desenvolver um **osciloscópio portátil** com interface touch, co
 
 ---
 📌 A documentação detalhada pode ser encontrada na pasta [`docs/`](docs/).
+
+## 📅 Etapa 2 – Testes de Hardware e Integração Inicial
+**Apresentação:** 16/10  
+### Subentregas:
+- Testar periféricos do microcontrolador  
+- Testar touch screen (pode ser com Arduino)  
+- Testar circuito de carregamento de bateria com a bateria  
+- Desenvolver design inicial do case  
+
+### Entregas Git:
+- Esquemático preliminar elétrico e layout do PCB  
+- Arquivos preliminares de design do case  
+- Código fonte do firmware dos testes  
+- Relatório de testes de hardware  
+- Manual de montagem  
+
+Documentos dessa etapa estão na pasta [`docs/etapa2`](docs/etapa2).
