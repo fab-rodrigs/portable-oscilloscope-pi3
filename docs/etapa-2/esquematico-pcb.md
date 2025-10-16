@@ -1,4 +1,9 @@
-# Esquemático do Circuito do Osciloscópio Portátil
+# Esquemático e Layout Preliminar do Circuito do Osciloscópio Portátil
+
+## Esquemático Preliminar
+
+![Esquemático do Circuito](Schematic.png)
+
 
 ## 1. Bloco Supply
 **Bateria e Módulos:**
@@ -30,9 +35,18 @@ Entrada com SW1 para AC ou DC. Seguido de atenuadores, com SW2 para escolha da a
 ## 4. Trigger
 - **Fase de teste:** O circuito do Trigger ainda será testado, a ideia é tentar utilizar uma porta I/O para sua implementação.
 
-## Esquemático 
+# Layout Preliminar
 
-![Esquemático do Circuito](Schematic.png)
+## Frente
+![Layout da Placa Preliminar Frente](PCB-Front.png)
+## Trás
+![Layout da Placa Preliminar Trás](PCB-back.png)
+## Angulada
+![Layout da Placa Preliminar Angulada](PCB-angle.png)
+
+
+
+
 
 
 
