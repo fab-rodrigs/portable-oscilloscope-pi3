@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=GND Pin=U?-1
+Change Component Designator: OldDesignator=U? NewDesignator=U1
+Added Component: Designator=U8(MT3608)
+Added Pin To Net: NetName=NetC1_1 Pin=U8-1
+Added Pin To Net: NetName=GND Pin=U8-2
+Added Pin To Net: NetName=NetU1_1 Pin=U1-1
+Added Pin To Net: NetName=NetU1_1 Pin=U8-3
+Added Net: Name=NetU1_1
+Added Pin To Net: NetName=NetU1_4 Pin=U1-4
+Added Pin To Net: NetName=NetU1_4 Pin=U8-4
+Added Net: Name=NetU1_4
+Added Member To Class: ClassName=Sheet2 Member=Component U8 MT3608

@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=3V3 Pin=U6-J3-4
+Add Pin To Net: Unknown Pin: Pin U1-1
+Add Pin To Net: Unknown Pin: Pin U1-3
+Add Pin To Net: Unknown Pin: Pin U1-4
+Added Pin To Net: NetName=3V3 Pin=U6-J3-8
+Add Class Member: Failed to add class member : Component U1 MT3608
