@@ -1,13 +1,13 @@
 # Relatório Técnico do Firmware: Osciloscópio Digital com LVGL na FRDM-K64F
 
-**Versão:** 3.0
+**Versão:** 4.0
 **Data:** 16 de outubro de 2025
 
 ---
 
 ## 1. Resumo
 
-Este documento detalha a arquitetura, implementação e otimização final do firmware para um protótipo de osciloscópio digital na plataforma NXP FRDM-K64F. O sistema integra com sucesso um display TFT com interface paralela, um touchscreen resistivo e a biblioteca gráfica LVGL para renderizar uma interface de usuário responsiva. O principal desafio técnico do projeto, gerenciar a necessidade de duas resoluções de ADC distintas (16 bits para o osciloscópio e 10 bits para o touchscreen), foi solucionado através da **manipulação direta de registradores de hardware**. Esta abordagem contornou as limitações da API do SDK e eliminou um gargalo crítico de performance. O firmware resultante é funcional, eficiente e serve como uma base robusta para futuras expansões.
+Este documento detalha a arquitetura, implementação e otimização final do firmware "bare-metal" (sem sistema operacional) para um protótipo de osciloscópio digital na plataforma NXP FRDM-K64F. O sistema integra com sucesso um display TFT com interface paralela, um touchscreen resistivo e a biblioteca gráfica LVGL para renderizar uma interface de usuário responsiva. O principal desafio técnico do projeto, gerenciar a necessidade de duas resoluções de ADC distintas (16 bits para o osciloscópio e 10 bits para o touchscreen), foi solucionado através da **manipulação direta de registradores de hardware**. Esta abordagem contornou as limitações da API do SDK e eliminou um gargalo crítico de performance, resultando em um firmware funcional, eficiente e que serve como uma base robusta para futuras expansões.
 
 ---
 
@@ -29,6 +29,8 @@ Este documento detalha a arquitetura, implementação e otimização final do fi
 
 ## 3. Arquitetura e Detalhes de Implementação
 
+O firmware opera em um modelo "superloop" (`while(1)`), onde todas as operações são orquestradas sequencialmente. A responsividade e o comportamento em tempo real são garantidos por otimizações de baixo nível e pelo uso de interrupções de hardware para tarefas críticas.
+
 ### 3.1. Driver do Display TFT
 A comunicação com o display é realizada via "bit-banging" otimizado. A abordagem utiliza acesso direto aos registradores de hardware (`PSOR` e `PCOR`) para manipular os pinos de dados distribuídos entre os PORTs GPIO, garantindo a máxima velocidade de transferência possível sem um barramento externo.
 
@@ -43,17 +45,15 @@ A solução foi implementar uma função `static inline`, `ADC16_SetResolution_F
 * **Registrador Alvo:** `ADCx_CFG1`
 * **Campo de Bits:** `MODE` (bits 2 e 3)
 
-A função `ADC16_SetResolution_Fast` lê o valor atual do registrador, limpa apenas os bits do campo `MODE` e, em seguida, define os novos bits de acordo com a resolução desejada. Esta operação é executada em pouquíssimos ciclos de clock.
+A função lê o valor atual do registrador, limpa apenas os bits do campo `MODE` e, em seguida, define os novos bits de acordo com a resolução desejada. Esta operação é executada em pouquíssimos ciclos de clock, eliminando completamente a latência.
 
 #### 3.2.3. Fluxo de Execução Coordenado
-O fluxo de controle foi orquestrado para garantir que cada módulo opere com a resolução correta:
-1.  **Driver do Touchscreen (`touchscreen_k64f.c`):** Antes de cada leitura de coordenada, a função `adc_read` chama `ADC16_SetResolution_Fast(base, kADC16_ResolutionSE10Bit)` para configurar o ADC para 10 bits. Imediatamente após a leitura do ADC1, a resolução é restaurada para 16 bits com a mesma função.
+O fluxo de controle garante que cada módulo opere com a resolução correta:
+1.  **Driver do Touchscreen (`touchscreen_k64f.c`):** Antes de cada leitura de coordenada, a função `adc_read` chama `ADC16_SetResolution_Fast()` para configurar o ADC para 10 bits. Imediatamente após a leitura do ADC1, a resolução é restaurada para 16 bits.
 2.  **Loop Principal (`main.c`):** O loop `while(1)` foi limpo de qualquer código de reconfiguração do ADC. Ele agora opera sob a premissa de que o `ADC1` está sempre configurado para 16 bits, estado que é garantido pela restauração feita no driver do touchscreen.
 
-Esta arquitetura resolveu completamente o conflito de configuração e o problema de performance.
-
 ### 3.3. Interface Gráfica e Lógica da Aplicação
-A interface do usuário é renderizada pela LVGL e inclui um gráfico para a forma de onda, um rótulo para o valor ADC e um botão para alterar a escala. O gerenciamento de tempo da biblioteca é tratado de forma robusta e eficiente por uma interrupção de hardware.
+A interface do usuário é renderizada pela LVGL. O gerenciamento de tempo da biblioteca é tratado de forma robusta e eficiente por uma interrupção de hardware.
 
 * **Gerenciamento de Tempo (SysTick):** O timer SysTick do ARM Cortex-M foi configurado para gerar uma interrupção a cada 1 milissegundo. A rotina de serviço de interrupção (`SysTick_Handler`) chama `lv_tick_inc(1)`, fornecendo à LVGL uma base de tempo precisa e desacoplando-a da lógica do loop principal.
 
@@ -70,21 +70,20 @@ O firmware alcançou uma performance fluida e responsiva através de um conjunto
 
 ---
 
-## 5. Instruções de Compilação e Implantação
+## 5. Conclusão
 
-1.  Importar o projeto no MCUXpresso IDE.
-2.  Verificar se o SDK para a FRDM-K64F está corretamente associado.
-3.  Assegurar que o nível de otimização do compilador está definido como `-O2` ou superior para performance ideal.
-4.  Conectar a placa FRDM-K64F via USB e iniciar uma sessão de depuração para transferir o firmware.
+A implementação "bare-metal" final atinge com sucesso todos os objetivos propostos, demonstrando uma solução de engenharia eficaz para um desafio complexo de hardware em um sistema embarcado. A performance do sistema é robusta, e a arquitetura, embora simples, é modular e bem organizada. O projeto valida a viabilidade do hardware e serve como uma base sólida e otimizada.
 
----
+## 6. Próximos Passos e Melhorias Futuras
 
-## 6. Conclusão e Próximos Passos
+Com a base de hardware e drivers validada, a evolução do projeto pode seguir em duas frentes principais: escalabilidade de software e expansão de funcionalidades.
 
-O firmware final atinge com sucesso todos os objetivos propostos, demonstrando uma solução de engenharia eficaz para um desafio complexo de hardware em um sistema embarcado. A performance do sistema é robusta, e a arquitetura é modular e extensível.
+### 6.1. Migração para um RTOS (Sistema Operacional de Tempo Real)
+Para transformar este protótipo em um produto mais complexo e robusto, o próximo passo lógico é a **migração para um RTOS como o FreeRTOS**.
+* **Benefícios:** Um RTOS introduzirá multitarefa preemptiva, permitindo que a aquisição de dados, a renderização da UI e outras futuras funcionalidades (como comunicação USB ou análise de dados) rodem como tarefas independentes e concorrentes. Isso melhora a modularidade, a responsividade e a confiabilidade do sistema, especialmente sob cargas de trabalho complexas.
+* **Arquitetura Proposta:** A migração envolveria a criação de tarefas distintas para a leitura do ADC (alta prioridade) e para o gerenciamento da LVGL (baixa prioridade), com comunicação entre elas através de mecanismos seguros como filas (queues) e mutexes.
 
-Com o principal gargalo de performance resolvido, os próximos passos podem focar na expansão das funcionalidades do aplicativo:
-
-* **Migrar Driver do Display para FlexBus:** Para o próximo nível de performance gráfica, substituir o driver de "bit-banging" por uma implementação que utilize o periférico de barramento externo **FlexBus**, permitindo transferências de dados via DMA e liberando a CPU.
+### 6.2. Expansão de Funcionalidades
+* **Migrar Driver do Display para FlexBus:** Para o próximo nível de performance gráfica, substituir o driver de "bit-banging" por uma implementação que utilize o periférico de barramento externo **FlexBus**.
 * **Implementar Funcionalidades de Osciloscópio:** Adicionar lógicas de trigger (borda de subida/descida, nível), cursores de medição e cálculos automáticos de Vpp, Vrms e frequência do sinal.
 * **Refinar a Interface do Usuário:** Adicionar menus, configurações de salvamento e mais opções de visualização utilizando os recursos da LVGL.
