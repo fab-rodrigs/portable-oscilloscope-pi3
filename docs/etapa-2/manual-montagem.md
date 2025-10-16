@@ -54,6 +54,9 @@
 
 ## Conexão do Display TFT ao FRDM-K64F (Interface MCC)
 
+![Esquemático do Circuito](display-image.png)
+![Esquemático do Circuito](mcu-image.png)
+
 Abaixo estão os mapeamentos entre os pinos do **Display LCD** e os pinos correspondentes do **FRDM-K64F** usados na **PCB Sanduíche**.
 
 | **Pino Display** | **Pino FRDM-K64F (MCU)** | **Função / Descrição** |
@@ -88,6 +91,7 @@ Após configurado:
 - A **PCB Sanduíche** interliga estes pinos entre o **Display TFT** e o **FRDM-K64F**.
 - O **MCC** gera a inicialização dos pinos automaticamente.  
 - O display é então controlado pelo firmware via GPIO paralelos (modo 8 bits).
+
 
 
 
