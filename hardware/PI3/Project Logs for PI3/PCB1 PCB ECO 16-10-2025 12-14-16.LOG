@@ -1,0 +1,8 @@
+Removed Pin From Net: NetName=NetC1_1 Pin=U8-1
+Added Component: Designator=SW_ON(SW)
+Added Pin To Net: NetName=NetC1_1 Pin=SW_ON-2
+Added Pin To Net: NetName=GND Pin=SW_ON-3
+Added Pin To Net: NetName=NetSW_ON_1 Pin=SW_ON-1
+Added Pin To Net: NetName=NetSW_ON_1 Pin=U8-1
+Added Net: Name=NetSW_ON_1
+Added Member To Class: ClassName=Sheet2 Member=Component SW_ON SW
