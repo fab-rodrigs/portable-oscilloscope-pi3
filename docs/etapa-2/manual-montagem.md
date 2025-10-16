@@ -83,11 +83,12 @@ Abaixo estão os mapeamentos entre os pinos do **Display LCD** e os pinos corres
 - Esses pinos devem ser configurados no **MCC (MCUXpresso Config Tools)** como **GPIO de saída digital**.
 
 
-### 🧩 Integração no Sistema
+### Integração no Sistema
 Após configurado:
 - A **PCB Sanduíche** interliga estes pinos entre o **Display TFT** e o **FRDM-K64F**.
 - O **MCC** gera a inicialização dos pinos automaticamente.  
 - O display é então controlado pelo firmware via GPIO paralelos (modo 8 bits).
+
 
 
 
