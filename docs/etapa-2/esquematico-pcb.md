@@ -1,4 +1,4 @@
-# Esquemático do Circuito do Osciloscópio Portátil
+# Esquemático e Layout Preliminar do Circuito do Osciloscópio Portátil
 
 ## Esquemático Preliminar
 
@@ -43,6 +43,7 @@ Entrada com SW1 para AC ou DC. Seguido de atenuadores, com SW2 para escolha da a
 ![Layout da Placa Preliminar Trás](PCB-back.png)
 ## Angulada
 ![Layout da Placa Preliminar Angulada](PCB-angle.png)
+
 
 
 
