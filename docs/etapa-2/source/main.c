@@ -211,10 +211,10 @@ int main(void)
     char info_text[50];
     uint32_t adcValue = 0;
 
+    SysTick_Config(SystemCoreClock / 1000U);
+
     while (1)
     {
-        const uint32_t loop_delay_ms = 1;
-
         // --- Altera resolução para 16 Bits ---
         adc16_config_t adc_touch_config;
         ADC16_GetDefaultConfig(&adc_touch_config);
@@ -229,7 +229,6 @@ int main(void)
         }
 
         adcValue = ADC16_GetChannelConversionValue(ADC1_PERIPHERAL, ADC_CHANNEL_GROUP);
-        //adcValue+=16384;
 
         // Mapeia o valor (0-65535) para a escala do gráfico
         int16_t chart_value = map(adcValue, 0, 65535, scales[current_scale_index].min, scales[current_scale_index].max);
@@ -241,7 +240,12 @@ int main(void)
 
         // --- Gerenciador da LVGL ---
         lv_task_handler();
-        lv_tick_inc(loop_delay_ms);
-        //Delay_ms(loop_delay_ms);
     }
 }
+
+void SysTick_Handler(void)
+{
+    // Informa à LVGL que 1 milissegundo se passou
+    lv_tick_inc(1);
+}
+
