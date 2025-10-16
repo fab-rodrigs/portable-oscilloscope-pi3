@@ -28,8 +28,11 @@ Entrada com SW1 para AC ou DC. Seguido de atenuadores, com SW2 para escolha da a
 
 
 ## 4. Trigger
-- **Fase de teste:**
+- **Fase de teste:** O circuito do Trigger ainda será testado, a ideia é tentar utilizar uma porta I/O para sua implementação.
+
+## Esquemático 
 
 ![Esquemático do Circuito](Schematic.png)
+
 
 
