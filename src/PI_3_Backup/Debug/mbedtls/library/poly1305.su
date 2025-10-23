@@ -1,0 +1,10 @@
+../mbedtls/library/poly1305.c:83:24:mul64	32	static
+../mbedtls/library/poly1305.c:101:13:poly1305_process	496	static
+../mbedtls/library/poly1305.c:209:13:poly1305_compute_mac	232	static
+../mbedtls/library/poly1305.c:278:6:mbedtls_poly1305_init	16	static
+../mbedtls/library/poly1305.c:285:6:mbedtls_poly1305_free	16	static
+../mbedtls/library/poly1305.c:293:5:mbedtls_poly1305_starts	16	static
+../mbedtls/library/poly1305.c:324:5:mbedtls_poly1305_update	40	static
+../mbedtls/library/poly1305.c:388:5:mbedtls_poly1305_finish	16	static
+../mbedtls/library/poly1305.c:415:5:mbedtls_poly1305_mac	104	static
+../mbedtls/library/poly1305.c:526:5:mbedtls_poly1305_self_test	40	static

@@ -1,0 +1,2 @@
+../lvgl/lvgl/src/extra/themes/mono/lv_theme_mono.c:194:13:theme_apply	24	static
+../lvgl/lvgl/src/extra/themes/mono/lv_theme_mono.c:167:14:lv_theme_mono_init	40	static

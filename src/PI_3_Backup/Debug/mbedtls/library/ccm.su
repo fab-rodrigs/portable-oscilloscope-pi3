@@ -1,0 +1,9 @@
+../mbedtls/library/ccm.c:61:6:mbedtls_ccm_init	16	static
+../mbedtls/library/ccm.c:67:5:mbedtls_ccm_setkey	32	static
+../mbedtls/library/ccm.c:103:6:mbedtls_ccm_free	16	static
+../mbedtls/library/ccm.c:154:12:ccm_auth_crypt	120	static
+../mbedtls/library/ccm.c:326:5:mbedtls_ccm_star_encrypt_and_tag	56	static
+../mbedtls/library/ccm.c:342:5:mbedtls_ccm_encrypt_and_tag	48	static
+../mbedtls/library/ccm.c:364:5:mbedtls_ccm_star_auth_decrypt	88	static
+../mbedtls/library/ccm.c:402:5:mbedtls_ccm_auth_decrypt	48	static
+../mbedtls/library/ccm.c:479:5:mbedtls_ccm_self_test	176	static

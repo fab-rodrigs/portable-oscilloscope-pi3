@@ -1,0 +1,10 @@
+C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3\mbedtls\include/mbedtls/cipher.h:596:19:mbedtls_cipher_get_key_bitlen	16	static
+C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3\mbedtls\include/mbedtls/ssl_internal.h:331:19:mbedtls_ssl_chk_buf_ptr	24	static
+../mbedtls/library/ssl_ticket.c:42:6:mbedtls_ssl_ticket_init	16	static
+../mbedtls/library/ssl_ticket.c:69:12:ssl_ticket_gen_key	64	static
+../mbedtls/library/ssl_ticket.c:99:12:ssl_ticket_update_keys	16	static
+../mbedtls/library/ssl_ticket.c:127:5:mbedtls_ssl_ticket_setup	32	static
+../mbedtls/library/ssl_ticket.c:198:5:mbedtls_ssl_ticket_write	96	static
+../mbedtls/library/ssl_ticket.c:282:32:ssl_ticket_select_key	24	static
+../mbedtls/library/ssl_ticket.c:298:5:mbedtls_ssl_ticket_parse	96	static
+../mbedtls/library/ssl_ticket.c:393:6:mbedtls_ssl_ticket_free	16	static
