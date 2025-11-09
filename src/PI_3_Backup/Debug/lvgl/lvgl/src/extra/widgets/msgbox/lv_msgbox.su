@@ -1,0 +1,11 @@
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:194:13:msgbox_close_click_event_cb	8	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:59:12:lv_msgbox_create	24	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:136:12:lv_msgbox_get_title	0	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:142:12:lv_msgbox_get_close_btn	0	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:148:12:lv_msgbox_get_text	0	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:154:12:lv_msgbox_get_content	0	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:160:12:lv_msgbox_get_btns	0	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:166:10:lv_msgbox_get_active_btn	0	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:172:14:lv_msgbox_get_active_btn_text	8	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:178:6:lv_msgbox_close	8	static
+../lvgl/lvgl/src/extra/widgets/msgbox/lv_msgbox.c:184:6:lv_msgbox_close_async	8	static

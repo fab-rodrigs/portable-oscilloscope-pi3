@@ -1,0 +1,5 @@
+../drivers/fsl_i2c_edma.c:88:13:I2C_MasterTransferCallbackEDMA	16	static
+../drivers/fsl_i2c_edma.c:403:6:I2C_MasterCreateEDMAHandle	32	static
+../drivers/fsl_i2c_edma.c:442:10:I2C_MasterTransferEDMA	56	static
+../drivers/fsl_i2c_edma.c:574:10:I2C_MasterTransferGetCountEDMA	16	static
+../drivers/fsl_i2c_edma.c:603:6:I2C_MasterTransferAbortEDMA	16	static

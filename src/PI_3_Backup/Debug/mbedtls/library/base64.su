@@ -1,0 +1,7 @@
+../mbedtls/library/base64.c:71:13:mbedtls_base64_cond_assign_uchar	32	static
+../mbedtls/library/base64.c:96:13:mbedtls_base64_cond_assign_uint32	32	static
+../mbedtls/library/base64.c:121:22:mbedtls_base64_eq	24	static
+../mbedtls/library/base64.c:147:22:mbedtls_base64_table_lookup	40	static
+../mbedtls/library/base64.c:164:5:mbedtls_base64_encode	56	static
+../mbedtls/library/base64.c:242:5:mbedtls_base64_decode	56	static
+../mbedtls/library/base64.c:354:5:mbedtls_base64_self_test	160	static

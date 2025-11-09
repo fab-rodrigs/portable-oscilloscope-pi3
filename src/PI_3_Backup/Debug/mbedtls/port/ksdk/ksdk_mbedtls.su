@@ -1,0 +1,17 @@
+../mbedtls/port/ksdk/ksdk_mbedtls.c:269:10:CRYPTO_InitHardware	8	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:371:5:mbedtls_des_setkey_enc	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:393:5:mbedtls_des_setkey_dec	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:416:5:mbedtls_des3_set2key_enc	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:446:5:mbedtls_des3_set2key_dec	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:476:5:mbedtls_des3_set3key_enc	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:501:5:mbedtls_des3_set3key_dec	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:526:5:mbedtls_des_crypt_ecb	32	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:566:5:mbedtls_des3_crypt_ecb	32	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:768:5:mbedtls_aes_setkey_enc	32	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:849:5:mbedtls_aes_setkey_dec	32	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:930:5:mbedtls_internal_aes_encrypt	32	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:1038:5:mbedtls_internal_aes_decrypt	32	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:3774:5:mbedtls_internal_md5_process	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:3873:5:mbedtls_internal_sha1_process	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:4380:5:mbedtls_internal_sha256_process	24	static
+../mbedtls/port/ksdk/ksdk_mbedtls.c:4827:5:mbedtls_hardware_poll	32	static

@@ -1,0 +1,6 @@
+../source/tft.c:29:6:write_command	16	static
+../source/tft.c:30:6:write_data	16	static
+../source/tft.c:31:6:write_data_16bit	64	static
+../source/tft.c:32:6:set_addr_window	264	static
+../source/tft.c:38:6:tft_flush_cb	360	static
+../source/tft.c:48:6:Display_init	40	static
