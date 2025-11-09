@@ -1,0 +1,46 @@
+Added Component: Designator=U7(Display)
+Added Component: Designator=U8(FRDMK64F)
+Added Pin To Net: NetName=PTB9 Pin=U7-3
+Added Pin To Net: NetName=PTA1 Pin=U7-4
+Added Pin To Net: NetName=PTB23 Pin=U7-5
+Added Pin To Net: NetName=PTA2 Pin=U7-6
+Added Pin To Net: NetName=PTC2 Pin=U7-7
+Added Pin To Net: NetName=PTC3 Pin=U7-8
+Added Pin To Net: NetName=PTC12 Pin=U7-9
+Added Pin To Net: NetName=PTC4 Pin=U7-10
+Added Pin To Net: NetName=3V3 Pin=U7-18
+Added Pin To Net: NetName=+5V Pin=U7-19
+Added Pin To Net: NetName=GND Pin=U7-21
+Added Pin To Net: NetName=PTB2 Pin=U7-23
+Added Pin To Net: NetName=PTB3 Pin=U7-24
+Added Pin To Net: NetName=PTB10 Pin=U7-25
+Added Pin To Net: NetName=PTB11 Pin=U7-26
+Added Pin To Net: NetName=PTC11 Pin=U7-27
+Added Pin To Net: NetName=PTB9 Pin=U8-J1-6
+Added Pin To Net: NetName=PTA1 Pin=U8-J1-8
+Added Pin To Net: NetName=PTB23 Pin=U8-J1-10
+Added Pin To Net: NetName=PTA2 Pin=U8-J1-12
+Added Pin To Net: NetName=PTC2 Pin=U8-J1-14
+Added Pin To Net: NetName=TRIG Pin=U8-J1-15
+Added Pin To Net: NetName=PTC3 Pin=U8-J1-16
+Added Pin To Net: NetName=PTC12 Pin=U8-J2-2
+Added Pin To Net: NetName=GND Pin=U8-J2-3
+Added Pin To Net: NetName=PTC4 Pin=U8-J2-4
+Added Pin To Net: NetName=PWM Pin=U8-J2-6
+Added Pin To Net: NetName=atenuation Pin=U8-J2-8
+Added Pin To Net: NetName=div2/5 Pin=U8-J2-10
+Added Pin To Net: NetName=AC/DC Pin=U8-J2-12
+Added Pin To Net: NetName=GND Pin=U8-J2-14
+Added Pin To Net: NetName=3V3 Pin=U8-J3-8
+Added Pin To Net: NetName=GND Pin=U8-J3-12
+Added Pin To Net: NetName=GND Pin=U8-J3-14
+Added Pin To Net: NetName=+5V Pin=U8-J3-16
+Added Pin To Net: NetName=ADC0_DP1 Pin=U8-J4-1
+Added Pin To Net: NetName=PTB2 Pin=U8-J4-2
+Added Pin To Net: NetName=PTB3 Pin=U8-J4-4
+Added Pin To Net: NetName=PTB10 Pin=U8-J4-6
+Added Pin To Net: NetName=PTB11 Pin=U8-J4-8
+Added Pin To Net: NetName=PTC11 Pin=U8-J4-10
+Added Pin To Net: NetName=PTC10 Pin=U8-J4-12
+Added Member To Class: ClassName=Sheet1 Member=Component U7 Display
+Added Member To Class: ClassName=Sheet1 Member=Component U8 FRDMK64F

@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=NetC2_e_1 Pin=U4-2
+Removed Pin From Net: NetName=NetC2_e_2 Pin=U4-4
+Added Component: Designator=C1_e(CAP_THT)
+Added Component: Designator=C2_e(CAP_THT)
+Added Pin To Net: NetName=-5V Pin=C1_e-1
+Added Pin To Net: NetName=GND Pin=C1_e-2
+Added Pin To Net: NetName=NetC2_e_1 Pin=C2_e-1
+Added Pin To Net: NetName=NetC2_e_2 Pin=C2_e-2
+Added Pin To Net: NetName=NetC2_e_2 Pin=U4-2
+Added Pin To Net: NetName=NetC2_e_1 Pin=U4-4
+Added Member To Class: ClassName=Sheet1 Member=Component C1_e 10u
+Added Member To Class: ClassName=Sheet1 Member=Component C2_e 10u

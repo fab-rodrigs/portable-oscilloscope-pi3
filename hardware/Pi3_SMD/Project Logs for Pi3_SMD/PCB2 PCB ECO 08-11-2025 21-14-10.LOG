@@ -1,0 +1,36 @@
+Added Component: Designator=SW1_sel(SW)
+Added Component: Designator=SW1(SW)
+Added Component: Designator=SW2_sel(SW)
+Added Component: Designator=SW2(SW)
+Added Component: Designator=SW3_sel(SW)
+Added Component: Designator=SW3(SW)
+Added Component: Designator=SW_ON(SW)
+Added Pin To Net: NetName=Input Pin=SW1-1
+Added Pin To Net: NetName=NetC6_1 Pin=SW1-2
+Added Pin To Net: NetName=NetC5_1 Pin=SW1-3
+Added Pin To Net: NetName=3V3 Pin=SW1_sel-1
+Added Pin To Net: NetName=AC/DC Pin=SW1_sel-2
+Added Pin To Net: NetName=GND Pin=SW1_sel-3
+Added Pin To Net: NetName=NetC6_2 Pin=SW2-1
+Added Pin To Net: NetName=NetSW2_2 Pin=SW2-2
+Added Pin To Net: NetName=NetC7_2 Pin=SW2-3
+Added Pin To Net: NetName=3V3 Pin=SW2_sel-1
+Added Pin To Net: NetName=atenuation Pin=SW2_sel-2
+Added Pin To Net: NetName=GND Pin=SW2_sel-3
+Added Pin To Net: NetName=NetR7_1 Pin=SW3-1
+Added Pin To Net: NetName=NetSW3_2 Pin=SW3-2
+Added Pin To Net: NetName=NetR6_1 Pin=SW3-3
+Added Pin To Net: NetName=3V3 Pin=SW3_sel-1
+Added Pin To Net: NetName=div2/5 Pin=SW3_sel-2
+Added Pin To Net: NetName=GND Pin=SW3_sel-3
+Added Pin To Net: NetName=NetC4_1 Pin=SW_ON-1
+Added Pin To Net: NetName=NetC1_2 Pin=SW_ON-2
+Added Pin To Net: NetName=GND Pin=SW_ON-3
+Added Member To Class: ClassName=Sheet1 Member=Component SW1_sel SW
+Added Member To Class: ClassName=Sheet1 Member=Component SW1 SW
+Added Member To Class: ClassName=Sheet1 Member=Component SW2_sel SW
+Added Member To Class: ClassName=Sheet1 Member=Component SW2 SW
+Added Member To Class: ClassName=Sheet1 Member=Component SW3_sel SW
+Added Member To Class: ClassName=Sheet1 Member=Component SW3 SW
+Added Member To Class: ClassName=Sheet1 Member=Component SW_ON SW
+Added Room: Name=Sheet1

@@ -1,0 +1,37 @@
+Added Component: Designator=U1(TP0456)
+Added Component: Designator=U2(MT3608)
+Added Component: Designator=U3(D2PAK)
+Added Component: Designator=U7(Display)
+Added Pin To Net: NetName=GND Pin=U1-1
+Added Pin To Net: NetName=GND Pin=U1-2
+Added Pin To Net: NetName=BAT+ Pin=U1-3
+Added Pin To Net: NetName=NetC3_2 Pin=U1-4
+Added Pin To Net: NetName=GND Pin=U1-6
+Added Pin To Net: NetName=NetC4_1 Pin=U2-1
+Added Pin To Net: NetName=GND Pin=U2-2
+Added Pin To Net: NetName=GND Pin=U2-3
+Added Pin To Net: NetName=NetC3_2 Pin=U2-4
+Added Pin To Net: NetName=GND Pin=U3-1
+Added Pin To Net: NetName=+5V Pin=U3-2
+Added Pin To Net: NetName=NetC1_2 Pin=U3-3
+Added Pin To Net: NetName=PTB9 Pin=U7-3
+Added Pin To Net: NetName=PTA1 Pin=U7-4
+Added Pin To Net: NetName=PTB23 Pin=U7-5
+Added Pin To Net: NetName=PTA2 Pin=U7-6
+Added Pin To Net: NetName=PTC2 Pin=U7-7
+Added Pin To Net: NetName=PTC3 Pin=U7-8
+Added Pin To Net: NetName=PTC12 Pin=U7-9
+Added Pin To Net: NetName=PTC4 Pin=U7-10
+Added Pin To Net: NetName=3V3 Pin=U7-18
+Added Pin To Net: NetName=+5V Pin=U7-19
+Added Pin To Net: NetName=GND Pin=U7-21
+Added Pin To Net: NetName=PTB2 Pin=U7-23
+Added Pin To Net: NetName=PTB3 Pin=U7-24
+Added Pin To Net: NetName=PTB10 Pin=U7-25
+Added Pin To Net: NetName=PTB11 Pin=U7-26
+Added Pin To Net: NetName=PTC11 Pin=U7-27
+Added Member To Class: ClassName=Sheet1 Member=Component U1 TP4056
+Added Member To Class: ClassName=Sheet1 Member=Component U2 MT3608
+Added Member To Class: ClassName=Sheet1 Member=Component U3 L7805
+Added Member To Class: ClassName=Sheet1 Member=Component U7 Display
+Added Room: Name=Sheet1
