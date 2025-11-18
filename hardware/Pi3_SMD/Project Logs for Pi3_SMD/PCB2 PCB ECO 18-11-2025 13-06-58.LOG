@@ -1,0 +1,22 @@
+Change Component Designator: OldDesignator=R18 NewDesignator=R19
+Change Component Designator: OldDesignator=R19 NewDesignator=R20
+Added Component: Designator=U7(Display)
+Added Pin To Net: NetName=PTB9 Pin=U7-3
+Added Pin To Net: NetName=PTA1 Pin=U7-4
+Added Pin To Net: NetName=PTB23 Pin=U7-5
+Added Pin To Net: NetName=PTA2 Pin=U7-6
+Added Pin To Net: NetName=PTC2 Pin=U7-7
+Added Pin To Net: NetName=PTC3 Pin=U7-8
+Added Pin To Net: NetName=PTC12 Pin=U7-9
+Added Pin To Net: NetName=PTC4 Pin=U7-10
+Added Pin To Net: NetName=3V3 Pin=U7-18
+Added Pin To Net: NetName=+5V Pin=U7-19
+Added Pin To Net: NetName=GND Pin=U7-21
+Added Pin To Net: NetName=PTB2 Pin=U7-23
+Added Pin To Net: NetName=PTB3 Pin=U7-24
+Added Pin To Net: NetName=PTB10 Pin=U7-25
+Added Pin To Net: NetName=PTB11 Pin=U7-26
+Added Pin To Net: NetName=PTC11 Pin=U7-27
+Change Net Name : Old Net Name=NetR18_2 New Net Name=NetR19_2
+Added Member To Class: ClassName=Sheet1 Member=Component R20 0
+Added Member To Class: ClassName=Sheet1 Member=Component U7 Display
