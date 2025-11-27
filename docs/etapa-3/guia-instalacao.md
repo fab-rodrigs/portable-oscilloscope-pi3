@@ -22,13 +22,13 @@ Este guia fornece instruções para instalação, execução e configuração do
 ```bash
 git clone https://github.com/seu-repositorio/osciloscopio.git
 cd osciloscopio/app
-```bash
+```
 
 ### **2. Instale as dependências**
 
 ```bash
 pip install -r requirements.txt
-```bash
+```
 
 Ou equivalente para sua plataforma.
 
@@ -38,7 +38,7 @@ Para iniciar o aplicativo:
 
 ```bash
 python app.py
-```bash
+```
 
 O app abrirá a interface gráfica automaticamente.
 
