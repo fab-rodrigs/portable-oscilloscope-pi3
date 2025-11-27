@@ -53,6 +53,25 @@ O objetivo é desenvolver um **osciloscópio portátil** com interface touch, co
 - Arquivos preliminares de design do case  
 - Código fonte do firmware dos testes  
 - Relatório de testes de hardware  
-- Manual de montagem  
+- Manual de montagem
 
-Documentos dessa etapa estão na pasta [`docs/etapa2`](docs/etapa2).
+  ---
+📌 A documentação detalhada pode ser encontrada na pasta  [`docs/etapa2`](docs/etapa2).
+
+## 📅 Etapa 3 – Integração Total, protótipo inicial
+**Apresentação:** 27/11  
+### Subentregas:
+- Desenvolver o app de comunicação com osciloscopio.
+- Integrar o app com o firmware e hardware
+- Definir métodos de amostragem e filtros
+- Revisar design do case e identificar melhorias
+- Monitorar bateria através do microcontrolador
+- Fabricar protótipo do case
+
+### Entregas Git:
+- Código fonte do app
+- Diagrama de arquitetura de software
+- Relatório de integração
+- Guia de instalação do app  
+---
+Documentos dessa etapa estão na pasta [`docs/etapa2`](docs/etapa3).
