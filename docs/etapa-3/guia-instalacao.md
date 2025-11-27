@@ -74,4 +74,6 @@ Após conectar:
 
 Após concluir a instalação, o app está pronto para uso com o hardware integrado.
 Para mais informações consulte o relatório de integração ou os documentos de arquitetura.
+
 ---
+
