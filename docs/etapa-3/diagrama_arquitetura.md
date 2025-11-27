@@ -5,36 +5,14 @@ O fluxo segue o caminho:
 
 **Microcontrolador → Comunicação → Parser → Módulo de Processamento → Interface Gráfica**
 
-## Visão Geral da Arquitetura
+flowchart TD
+    MCU[Microcontrolador<br>(Envio de dados)]
+    COMMS[Módulo de Comunicação<br>(Serial / USB / BT)]
+    PARSER[Parser<br>(Interpretação dos dados)]
+    PROC[Processamento<br>Filtros / Buffer]
+    UI[Interface Gráfica<br>(Osciloscópio)]
 
-+-------------------+
-| Microcontrolador |
-| (envio de dados) |
-+---------+---------+
-|
-v
-+-------------------+
-| Módulo de Comms |
-| (Serial/USB/BT) |
-+---------+---------+
-|
-v
-+-------------------+
-| Parser |
-| (interpretação) |
-+---------+---------+
-|
-v
-+-------------------+
-| Processamento |
-| Filtros / Buffer |
-+---------+---------+
-|
-v
-+-------------------+
-| Interface Gráfica |
-| (Osciloscópio) |
-+-------------------+
+    MCU --> COMMS --> PARSER --> PROC --> UI
 
 
 ## Descrição dos Módulos
