@@ -5,6 +5,8 @@ O fluxo segue o caminho:
 
 **Microcontrolador → Comunicação → Parser → Módulo de Processamento → Interface Gráfica**
 
+<img width="692" height="613" alt="Captura de tela 2025-11-27 180923" src="https://github.com/user-attachments/assets/853016c7-aa16-46b6-ac34-bf5975158707" />
+
 ## Visão Geral da Arquitetura
 
 **Microcontrolador (envio de dados)**  
