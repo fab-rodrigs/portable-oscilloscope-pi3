@@ -14,7 +14,7 @@ A primeira etapa consistiu em testar a comunicação usando dados sintéticos, e
 
 Isso permitiu validar que o app estava interpretando corretamente a estrutura dos pacotes.
 
-![Esquemático do Circuito](imagens/integracao_display_mcc.png)
+![integração Display e microcontrolador](imagens/integracao_display_mcc.jpg)
 
 ---
 
@@ -45,12 +45,17 @@ Nesta fase, o hardware já incluía:
 - Alimentação
 - Case prototipado (primeira versão)
 
+ ![Integração pre-case](imagens/integracao_pre_case.jpeg)
+
 Validações feitas:
 
 - Acesso aos conectores
 - Estabilidade sob uso contínuo
 - Testes de ruído e interferência elétrica
 - Temperatura interna do case
+
+
+ ![Integração pre-case](imagens/integracao_3D.jpeg)
 
 ---
 
