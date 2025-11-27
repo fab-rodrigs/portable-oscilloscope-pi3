@@ -9,11 +9,11 @@ O fluxo segue o caminho:
 
 ```mermaid
 flowchart TD
-    MCU[Microcontrolador<br>(Envio de dados)]
-    COMMS[Módulo de Comunicação<br>(Serial / USB / BT)]
-    PARSER[Parser<br>(Interpretação dos dados)]
-    PROC[Processamento<br>Filtros / Buffer]
-    UI[Interface Gráfica<br>(Osciloscópio)]
+    MCU[Microcontrolador (Envio de dados)]
+    COMMS[Módulo de Comunicação (Serial / USB / BT)]
+    PARSER[Parser (Interpretação dos dados)]
+    PROC[Processamento - Filtros / Buffer]
+    UI[Interface Gráfica (Osciloscópio)]
 
     MCU --> COMMS --> PARSER --> PROC --> UI
 ```
