@@ -1,0 +1,2 @@
+../board/clock_config.c:77:6:BOARD_InitBootClocks	8	static
+../board/clock_config.c:157:6:BOARD_BootClockRUN	8	static

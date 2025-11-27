@@ -1,0 +1,3 @@
+../lvgl/template/lvgl_support.c:27:6:lv_port_pre_init	0	static
+../lvgl/template/lvgl_support.c:31:6:lv_port_disp_init	0	static
+../lvgl/template/lvgl_support.c:36:6:lv_port_indev_init	0	static

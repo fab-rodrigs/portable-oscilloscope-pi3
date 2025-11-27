@@ -1,0 +1,10 @@
+C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3\drivers/fsl_clock.h:668:20:CLOCK_EnableClock	24	static
+C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3\drivers/fsl_port.h:374:20:PORT_SetPinMux	24	static
+C:/Users/Acer-PC/Documents/MCUXpressoIDE_25.6.136/workspace/PI_3/lvgl/lvgl/src/core/lv_disp.h:163:26:lv_scr_act	8	static
+C:/Users/Acer-PC/Documents/MCUXpressoIDE_25.6.136/workspace/PI_3/lvgl/lvgl/src/lv_api_map.h:34:51:lv_task_handler	8	static
+../source/main2.c:50:6:lv_textarea_1	8	static
+../source/main2.c:58:6:update_text	8	static
+../source/main2.c:70:13:Delay_ms	16	static
+../source/main2.c:82:5:main	8	static
+../source/main2.c:124:6:KSDK_GPIO_Init	16	static
+../source/main2.c:186:6:Error_Handler	4	static

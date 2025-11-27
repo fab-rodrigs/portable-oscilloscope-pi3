@@ -1,0 +1,4 @@
+../lvgl/lvgl/src/draw/lv_draw_rect.c:1106:35:shadow_blur_corner	72	static
+../lvgl/lvgl/src/draw/lv_draw_rect.c:1216:13:draw_full_border	184	static
+../lvgl/lvgl/src/draw/lv_draw_rect.c:75:28:lv_draw_rect_dsc_init	8	static
+../lvgl/lvgl/src/draw/lv_draw_rect.c:98:6:lv_draw_rect	240	static

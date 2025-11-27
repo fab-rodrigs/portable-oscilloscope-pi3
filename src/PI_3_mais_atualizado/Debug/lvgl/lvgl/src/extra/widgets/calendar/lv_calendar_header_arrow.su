@@ -1,0 +1,3 @@
+../lvgl/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c:107:13:month_event_cb	24	static
+../lvgl/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c:64:13:my_constructor	32	static
+../lvgl/lvgl/src/extra/widgets/calendar/lv_calendar_header_arrow.c:51:12:lv_calendar_header_arrow_create	16	static

@@ -1,0 +1,2 @@
+../lvgl/src/draw/lv_draw_rect.c:38:28:lv_draw_rect_dsc_init	16	static
+../lvgl/src/draw/lv_draw_rect.c:63:6:lv_draw_rect	8	static

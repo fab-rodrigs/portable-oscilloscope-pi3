@@ -1,0 +1,3 @@
+../source/lcd_lvgl.c:26:6:monitor_cb	24	static
+../source/lcd_lvgl.c:36:6:Display_init	24	static
+../source/lcd_lvgl.c:74:13:tft_flush	56	static

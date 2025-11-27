@@ -1,0 +1,12 @@
+../drivers/fsl_dspi_edma.c:1006:13:EDMA_DspiMasterCallback	8	static
+../drivers/fsl_dspi_edma.c:1451:13:EDMA_DspiSlaveCallback	8	static
+../drivers/fsl_edma.h:506:20:EDMA_EnableAutoStopRequest.part.0	8	static
+../drivers/fsl_dspi_edma.c:91:6:DSPI_MasterTransferCreateHandleEDMA	32	static
+../drivers/fsl_dspi_edma.c:137:10:DSPI_MasterTransferEDMA	112	static
+../drivers/fsl_dspi_edma.c:951:10:DSPI_MasterHalfDuplexTransferEDMA	32	static
+../drivers/fsl_dspi_edma.c:1037:6:DSPI_MasterTransferAbortEDMA	8	static
+../drivers/fsl_dspi_edma.c:1062:10:DSPI_MasterTransferGetCountEDMA	16	static
+../drivers/fsl_dspi_edma.c:1107:6:DSPI_SlaveTransferCreateHandleEDMA	32	static
+../drivers/fsl_dspi_edma.c:1150:10:DSPI_SlaveTransferEDMA	80	static
+../drivers/fsl_dspi_edma.c:1482:6:DSPI_SlaveTransferAbortEDMA	8	static
+../drivers/fsl_dspi_edma.c:1506:10:DSPI_SlaveTransferGetCountEDMA	16	static

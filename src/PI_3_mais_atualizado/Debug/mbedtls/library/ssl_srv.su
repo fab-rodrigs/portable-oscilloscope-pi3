@@ -1,0 +1,5 @@
+../mbedtls/library/ssl_srv.c:4041:12:ssl_parse_client_psk_identity	32	static
+../mbedtls/library/ssl_srv.c:3943:12:ssl_parse_encrypted_pms	168	static
+../mbedtls/library/ssl_srv.c:49:5:mbedtls_ssl_set_client_transport_id	16	static
+../mbedtls/library/ssl_srv.c:67:6:mbedtls_ssl_conf_dtls_cookies	0	static
+../mbedtls/library/ssl_srv.c:4681:5:mbedtls_ssl_handshake_server_step	224	static

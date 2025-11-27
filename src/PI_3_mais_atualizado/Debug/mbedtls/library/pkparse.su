@@ -1,0 +1,11 @@
+../mbedtls/library/pkparse.c:522:12:pk_get_rsapubkey	56	static
+../mbedtls/library/pkparse.c:685:12:asn1_get_nonzero_mpi	16	static
+../mbedtls/library/pkparse.c:577:12:pk_get_pk_alg	40	static
+../mbedtls/library/pkparse.c:456:12:pk_use_ecparams	280	static
+../mbedtls/library/pkparse.c:861:12:pk_parse_key_sec1_der	64	static
+../mbedtls/library/pkparse.c:704:12:pk_parse_key_pkcs1_der	48	static
+../mbedtls/library/pkparse.c:999:12:pk_parse_key_pkcs8_unencrypted_der	48	static
+../mbedtls/library/pkparse.c:1096:12:pk_parse_key_pkcs8_encrypted_der	88	static
+../mbedtls/library/pkparse.c:610:5:mbedtls_pk_parse_subpubkey	56	static
+../mbedtls/library/pkparse.c:1216:5:mbedtls_pk_parse_key	64	static
+../mbedtls/library/pkparse.c:1429:5:mbedtls_pk_parse_public_key	72	static

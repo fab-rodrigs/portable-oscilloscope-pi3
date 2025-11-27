@@ -1,0 +1,13 @@
+../mbedtls/library/ecdh.c:113:12:ecdh_compute_shared_restartable.constprop	80	static
+../mbedtls/library/ecdh.c:58:5:mbedtls_ecdh_can_do	0	static
+../mbedtls/library/ecdh.c:97:5:mbedtls_ecdh_gen_public	40	static
+../mbedtls/library/ecdh.c:145:5:mbedtls_ecdh_compute_shared	0	static
+../mbedtls/library/ecdh.c:175:6:mbedtls_ecdh_init	8	static
+../mbedtls/library/ecdh.c:212:5:mbedtls_ecdh_setup	8	static
+../mbedtls/library/ecdh.c:266:6:mbedtls_ecdh_free	8	static
+../mbedtls/library/ecdh.c:355:5:mbedtls_ecdh_make_params	64	static
+../mbedtls/library/ecdh.c:409:5:mbedtls_ecdh_read_params	24	static
+../mbedtls/library/ecdh.c:470:5:mbedtls_ecdh_get_params	16	static
+../mbedtls/library/ecdh.c:561:5:mbedtls_ecdh_make_public	56	static
+../mbedtls/library/ecdh.c:617:5:mbedtls_ecdh_read_public	24	static
+../mbedtls/library/ecdh.c:695:5:mbedtls_ecdh_calc_secret	32	static

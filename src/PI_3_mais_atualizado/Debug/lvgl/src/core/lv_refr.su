@@ -1,0 +1,11 @@
+../lvgl/src/core/lv_refr.c:809:19:lv_refr_get_top_obj	24	static
+../lvgl/src/core/lv_refr.c:105:6:_lv_refr_init	0	static
+../lvgl/src/core/lv_refr.c:132:6:lv_obj_redraw	64	static
+../lvgl/src/core/lv_refr.c:970:6:refr_obj.part.0	104	static
+../lvgl/src/core/lv_refr.c:849:13:refr_obj_and_children	32	static
+../lvgl/src/core/lv_refr.c:700:13:refr_area_part	216	static
+../lvgl/src/core/lv_refr.c:208:6:_lv_inv_area	32	static
+../lvgl/src/core/lv_refr.c:269:13:_lv_refr_get_disp_refreshing	0	static
+../lvgl/src/core/lv_refr.c:280:6:_lv_refr_set_disp_refreshing	0	static
+../lvgl/src/core/lv_refr.c:289:6:_lv_disp_refr_timer	120	static
+../lvgl/src/core/lv_refr.c:115:6:lv_refr_now	8	static

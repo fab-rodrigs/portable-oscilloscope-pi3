@@ -1,0 +1,6 @@
+../source/UART0.c:28:6:UART0_Read	0	static
+../source/UART0.c:38:6:UART0_Available	0	static
+../source/UART0.c:45:6:UART0_RX_TX_IRQHandler	8	static
+../source/UART0.c:58:6:UART0_Init	24	static
+../source/UART0.c:96:6:UART0_SendByte	0	static
+../source/UART0.c:103:6:UART0_SendString	0	static

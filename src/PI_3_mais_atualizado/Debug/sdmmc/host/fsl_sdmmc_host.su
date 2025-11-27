@@ -1,0 +1,14 @@
+../sdmmc/host/fsl_sdmmc_host.c:108:13:SDMMCHOST_CardInterrupt	0	static
+../sdmmc/host/fsl_sdmmc_host.c:252:13:SDMMCHOST_TransferCompleteCallback	0	static
+../sdmmc/host/fsl_sdmmc_host.c:81:13:SDMMCHOST_DetectCardRemoveByHost	16	static
+../sdmmc/host/fsl_sdmmc_host.c:53:13:SDMMCHOST_DetectCardInsertByHost	16	static
+../sdmmc/host/fsl_sdmmc_host.c:123:10:SDMMCHOST_CardIntInit	4	static
+../sdmmc/host/fsl_sdmmc_host.c:166:10:SDMMCHOST_CardDetectStatus	16	static
+../sdmmc/host/fsl_sdmmc_host.c:132:10:SDMMCHOST_CardDetectInit	24	static
+../sdmmc/host/fsl_sdmmc_host.c:191:10:SDMMCHOST_PollingCardDetectStatus	32	static
+../sdmmc/host/fsl_sdmmc_host.c:276:10:SDMMCHOST_TransferFunction	48	static
+../sdmmc/host/fsl_sdmmc_host.c:356:6:SDMMCHOST_ConvertDataToLittleEndian	0	static
+../sdmmc/host/fsl_sdmmc_host.c:392:10:SDMMCHOST_Init	40	static
+../sdmmc/host/fsl_sdmmc_host.c:436:6:SDMMCHOST_Reset	0	static
+../sdmmc/host/fsl_sdmmc_host.c:441:6:SDMMCHOST_SetCardBusWidth	0	static
+../sdmmc/host/fsl_sdmmc_host.c:450:6:SDMMCHOST_Deinit	16	static

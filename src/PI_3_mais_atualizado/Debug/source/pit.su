@@ -1,0 +1,3 @@
+../source/pit.c:8:6:pit_init	8	static
+../source/pit.c:26:6:PIT0_IRQHandler	0	static
+../source/pit.c:35:6:enable_irq	0	static

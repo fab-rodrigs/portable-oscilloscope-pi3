@@ -1,0 +1,6 @@
+../source/touchscreen_k64f.c:59:16:adc_read	24	static
+../source/touchscreen_k64f.c:125:9:get_touch_point	88	static
+../source/touchscreen_k64f.c:284:5:read_touch_x	24	static
+../source/touchscreen_k64f.c:315:5:read_touch_y	16	static
+../source/touchscreen_k64f.c:346:10:get_pressure	32	static
+../source/touchscreen_k64f.c:388:6:touchscreen_init	24	static

@@ -1,0 +1,10 @@
+../lvgl/src/misc/lv_color.c:37:28:lv_color_fill	12	static
+../lvgl/src/misc/lv_color.c:127:12:lv_color_lighten	0	static
+../lvgl/src/misc/lv_color.c:132:12:lv_color_darken	0	static
+../lvgl/src/misc/lv_color.c:137:12:lv_color_change_lightness	0	static
+../lvgl/src/misc/lv_color.c:152:12:lv_color_hsv_to_rgb	4	static
+../lvgl/src/misc/lv_color.c:217:16:lv_color_rgb_to_hsv	32	static
+../lvgl/src/misc/lv_color.c:268:16:lv_color_to_hsv	16	static
+../lvgl/src/misc/lv_color.c:275:12:lv_palette_main	0	static
+../lvgl/src/misc/lv_color.c:294:12:lv_palette_lighten	0	static
+../lvgl/src/misc/lv_color.c:333:12:lv_palette_darken	0	static

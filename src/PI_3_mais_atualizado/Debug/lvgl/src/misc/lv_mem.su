@@ -1,0 +1,15 @@
+../lvgl/src/misc/lv_mem.c:552:13:lv_mem_walker	0	static
+../lvgl/src/misc/lv_mem.c:87:6:lv_mem_init	8	static
+../lvgl/src/misc/lv_mem.c:113:6:lv_mem_deinit	8	static
+../lvgl/src/misc/lv_mem.c:126:8:lv_mem_alloc	8	static
+../lvgl/src/misc/lv_mem.c:170:6:lv_mem_free	8	static
+../lvgl/src/misc/lv_mem.c:195:8:lv_mem_realloc	16	static
+../lvgl/src/misc/lv_mem.c:220:10:lv_mem_test	8	static
+../lvgl/src/misc/lv_mem.c:277:8:lv_mem_buf_get	24	static
+../lvgl/src/misc/lv_mem.c:333:6:lv_mem_buf_release	0	static
+../lvgl/src/misc/lv_mem.c:350:6:lv_mem_buf_free_all	32	static
+../lvgl/src/misc/lv_mem.c:369:30:lv_memcpy	16	static
+../lvgl/src/misc/lv_mem.c:431:28:lv_memset	12	static
+../lvgl/src/misc/lv_mem.c:247:6:lv_mem_monitor	8	static
+../lvgl/src/misc/lv_mem.c:474:28:lv_memset_00	8	static
+../lvgl/src/misc/lv_mem.c:512:28:lv_memset_ff	8	static
