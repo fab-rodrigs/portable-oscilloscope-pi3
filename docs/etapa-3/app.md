@@ -1,159 +1,127 @@
-# Aplicativo de Comunicação e Visualização do Osciloscópio
+## 📤 Como o Microcontrolador Envia os Dados (Firmware → Python)
 
-Este documento descreve o funcionamento do aplicativo em Python utilizado para comunicação com o microcontrolador e exibição dos dados em forma de gráfico, simulando o comportamento básico de um osciloscópio em tempo real.
+O aplicativo em Python depende do formato de transmissão gerado pelo firmware do microcontrolador. Abaixo está a lógica utilizada para preparar e enviar os dados via UART:
 
-O código completo do aplicativo está disponível no repositório em:
+### 🔧 Alinhamento do buffer
 
-➡️ **`src/oscilloscope_app_code.py`**
+O firmware captura amostras via ADC usando DMA. Depois, alinha o buffer com base na posição do *trigger*:
 
----
-
-## 📌 Objetivo do Aplicativo
-
-O app tem como finalidade:
-
-- Estabelecer comunicação serial com o microcontrolador.
-- Ler continuamente os dados enviados pelo firmware.
-- Interpretar os valores ADC recebidos da porta serial.
-- Plotar os dados em tempo real usando **matplotlib**, funcionando como um osciloscópio simples.
-
-O aplicativo foi projetado para operar em conjunto com o firmware do microcontrolador, que transmite amostras de sinal no formato:
-
-```
-,67,72,44,18,...
+```c
+for (int i = 0; i < DMA_BUFFER_SIZE; i++) {
+    int source_index = (trigger_index - g_trigger_x_pos + i + DMA_BUFFER_SIZE) % DMA_BUFFER_SIZE;
+    aligned_buffer[i] = local_buffer[source_index];
+}
 ```
 
-Cada linha representa um frame de dados lido pelo ADC.
+Esse bloco:
+
+- Reorganiza o buffer circular.
+- Garante que os dados enviados comecem exatamente no ponto do trigger.
+- Mantém o comportamento clássico de um osciloscópio.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+### 📦 Conversão dos valores para texto
 
-- **Python 3**
-- **PySerial** — leitura da porta serial.
-- **Matplotlib** — renderização gráfica em tempo real.
-- **NumPy** — manipulação eficiente de arrays.
+Para transmitir os valores por UART sem usar `sprintf` (que é lento), o código gera manualmente uma string para cada amostra:
+
+```c
+static char uart_tx_buf[16];
+
+for (int i = 0; i < DMA_BUFFER_SIZE; i++) {
+    uint16_t val = aligned_buffer[i] & 0x3FF;
+
+    // Conversão manual para string (mais rápido que sprintf)
+    char *p = uart_tx_buf + sizeof(uart_tx_buf) - 1;
+    *p = '\0';
+    do {
+        *--p = '0' + (val % 10);
+        val /= 10;
+    } while (val);
+    *--p = ',';
+
+    UART_WriteBlocking(UART0, (uint8_t*)p, strlen(p));
+}
+```
+
+Cada valor é enviado no formato:
+
+```
+,123
+,456
+,789
+...
+```
+
+Ou seja:
+
+- **Sempre começa com uma vírgula**.
+- Em seguida vem o número já convertido para ASCII.
+- Não tem espaço entre valores.
+
+Esse formato reduz overhead e facilita o parsing no Python.
 
 ---
 
-## 🔌 Comunicação Serial
+### 🔚 Finalização do frame
 
-A conexão com o dispositivo é aberta da seguinte forma:
+Ao final do envio de todas as amostras, o firmware finaliza com um `\n`:
+
+```c
+UART_WriteBlocking(UART0, (uint8_t*)"\n", 2);
+```
+
+Isso sinaliza ao aplicativo Python que um *frame completo* foi transmitido.
+
+---
+
+## 🔗 Ligação com o Aplicativo Python
+
+O app em Python faz o processamento inverso dessa formatação:
 
 ```python
-PORTA = "COM10"
-BAUD = 1000000
-ser = serial.Serial(PORTA, BAUD, timeout=1)
-```
-
-- **PORTA**: depende do sistema operacional (COMx no Windows, /dev/ttyUSBx no Linux).
-- **BAUD**: 1.000.000 bps, definido pelo firmware.
-- **timeout**: evita travamentos caso um frame não seja recebido.
-
----
-
-## 📈 Plotagem em Tempo Real
-
-O gráfico funciona no modo *interactive* (plt.ion), permitindo atualização contínua:
-
-```python
-plt.ion()
-fig, ax = plt.subplots()
-linha_plot, = ax.plot([], [])
-ax.set_ylim(0, 1023)      # faixa do ADC
-ax.set_xlim(0, 500)
-```
-
-A aplicação assume inicialmente um máximo de 500 pontos por quadro, mas ajusta automaticamente ao receber novos tamanhos de vetor.
-
----
-
-## 🔍 Processamento dos Dados
-
-Os dados chegam no formato:
-
-```
-,67,72,44,18
-```
-
-Por isso, o código:
-
-1. Remove a vírgula inicial.
-2. Divide a string pelo separador `,`.
-3. Converte cada entrada para inteiro.
-
-```python
+raw = ser.readline().decode(errors="ignore").strip()
 partes = raw.split(",")[1:]
 dados = [int(x) for x in partes if x.isdigit()]
 ```
 
-Somente valores numéricos válidos são plotados.
+O funcionamento é:
 
----
+1. `readline()` lê até o `\n` enviado pelo microcontrolador.
+2. `split(",")` divide os valores transmitidos.
+3. O primeiro item é vazio (por causa da vírgula inicial), então é ignorado com `[1:]`.
+4. Cada trecho é convertido para inteiro, reconstruindo o vetor de amostras ADC.
 
-## 🔄 Loop Principal
+Assim, o formato:
 
-O app roda continuamente até que seja interrompido pelo usuário (Ctrl+C):
+```
+,512,520,530,480,460,440,...
+```
+
+é convertido diretamente para:
 
 ```python
-while True:
-    raw = ser.readline().decode(errors="ignore").strip()
-
-    if not raw:
-        continue
-
-    partes = raw.split(",")[1:]
-    dados = [int(x) for x in partes if x.isdigit()]
-
-    if len(dados) == 0:
-        continue
-
-    linha_plot.set_ydata(dados)
-    linha_plot.set_xdata(np.arange(len(dados)))
-    ax.set_xlim(0, len(dados))
-
-    plt.pause(0.001)
+[512, 520, 530, 480, 460, 440, ...]
 ```
 
-Esse mecanismo permite:
-
-- Atualização muito rápida.
-- Baixa latência.
-- Visualização contínua dos sinais.
+Sem perda de dados e com baixo custo computacional.
 
 ---
 
-## 🧪 Execução
+## 🧩 Resumo da Interação Firmware ↔ App
 
-Para rodar o aplicativo:
+**Firmware (C)**  
+→ Reorganiza as amostras pelo trigger  
+→ Converte números manualmente para texto  
+→ Envia formato `,valor` repetido  
+→ Finaliza com `\n`
 
-```bash
-python oscilloscope_app_code.py
-```
+**App Python**  
+→ Lê um frame completo por linha  
+→ Remove a vírgula inicial  
+→ Extrai os números  
+→ Plota em tempo real  
+→ Ajusta eixo X automaticamente  
 
-Certifique-se de:
-
-- Ter instalado `pyserial` e `matplotlib`.
-- Ajustar a porta serial no início do arquivo.
-
----
-
-## 📝 Considerações Finais
-
-Este aplicativo fornece as funcionalidades básicas de um osciloscópio digital simples:
-
-- Leitura sequencial do ADC.
-- Plotagem contínua.
-- Interpretação automática dos frames.
-
-Ele serviu como base para futuras expansões, como:
-
-- Ferramentas de medição (amplitude, frequência, RMS).
-- Modos de trigger.
-- Armazenamento de sinais.
-- Zoom e escala automática.
-
-Para detalhes adicionais da arquitetura, consulte o documento:
-
-➡️ **`docs/etapa-3/diagrama_arquitetura.md`**
+Essa integração garante baixo atraso, alta taxa de amostragem e visualização fluida no “osciloscópio” do app.
 
