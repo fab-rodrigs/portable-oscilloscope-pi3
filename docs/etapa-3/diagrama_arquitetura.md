@@ -5,6 +5,9 @@ O fluxo segue o caminho:
 
 **Microcontrolador → Comunicação → Parser → Módulo de Processamento → Interface Gráfica**
 
+## Visão Geral da Arquitetura
+
+```mermaid
 flowchart TD
     MCU[Microcontrolador<br>(Envio de dados)]
     COMMS[Módulo de Comunicação<br>(Serial / USB / BT)]
@@ -13,6 +16,7 @@ flowchart TD
     UI[Interface Gráfica<br>(Osciloscópio)]
 
     MCU --> COMMS --> PARSER --> PROC --> UI
+```
 
 
 ## Descrição dos Módulos
