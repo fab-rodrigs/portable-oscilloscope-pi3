@@ -66,3 +66,6 @@ A integração demonstrou que o fluxo completo funciona:
 **Sinal → Microcontrolador → App → Osciloscópio Visual**
 
 A partir daqui, ajustes finos e aprimoramentos podem ser realizados conforme novos testes forem executados.
+
+ ![Integração pre-case](imagens/integracao_final.jpeg)
+
