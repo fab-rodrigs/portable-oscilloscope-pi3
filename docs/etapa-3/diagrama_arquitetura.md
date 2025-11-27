@@ -7,16 +7,15 @@ O fluxo segue o caminho:
 
 ## Visão Geral da Arquitetura
 
-```mermaid
-flowchart TD
-    MCU["Microcontrolador(Envio de dados)"]
-    COMMS["Módulo de Comunicação(Serial / USB / BT)"]
-    PARSER["Parser\n(Interpretação dos dados)"]
-    PROC["ProcessamentoFiltros / Buffer"]
-    UI["Interface Gráfica(Osciloscópio)"]
-
-    MCU --> COMMS --> PARSER --> PROC --> UI
-```
+**Microcontrolador (envio de dados)**  
+⬇️  
+**Módulo de Comunicação (Serial / USB / Bluetooth)**  
+⬇️  
+**Parser (interpretação dos pacotes)**  
+⬇️  
+**Processamento (filtros e bufferização)**  
+⬇️  
+**Interface Gráfica (Osciloscópio)**
 
 
 ## Descrição dos Módulos
