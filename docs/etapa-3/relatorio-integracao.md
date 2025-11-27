@@ -14,6 +14,8 @@ A primeira etapa consistiu em testar a comunicação usando dados sintéticos, e
 
 Isso permitiu validar que o app estava interpretando corretamente a estrutura dos pacotes.
 
+![Esquemático do Circuito](imagens/integracao_display_mcc.png)
+
 ---
 
 ## 2. Integração com o Firmware Real
