@@ -248,19 +248,6 @@ void BOARD_InitBootPins(void);
 #define BOARD_INITPINS_ADC_PIN_MASK (1U << 10U)      /*!<@brief PORT pin mask */
                                                      /* @} */
 
-/*! @name PORTD1 (number 94), AC_DC
-  @{ */
-
-/* Symbols to be used with GPIO driver */
-#define BOARD_INITPINS_AC_DC_GPIO GPIOD               /*!<@brief GPIO peripheral base pointer */
-#define BOARD_INITPINS_AC_DC_GPIO_PIN_MASK (1U << 1U) /*!<@brief GPIO pin mask */
-
-/* Symbols to be used with PORT driver */
-#define BOARD_INITPINS_AC_DC_PORT PORTD               /*!<@brief PORT peripheral base pointer */
-#define BOARD_INITPINS_AC_DC_PIN 1U                   /*!<@brief PORT pin number */
-#define BOARD_INITPINS_AC_DC_PIN_MASK (1U << 1U)      /*!<@brief PORT pin mask */
-                                                      /* @} */
-
 /*! @name PORTD2 (number 95), ATTEN
   @{ */
 
@@ -290,6 +277,19 @@ void BOARD_InitBootPins(void);
 /*! @name ADC0_DP1 (number 14), BAT
   @{ */
 /* @} */
+
+/*! @name PORTD1 (number 94), AC_DC
+  @{ */
+
+/* Symbols to be used with GPIO driver */
+#define BOARD_INITPINS_AC_DC_GPIO GPIOD               /*!<@brief GPIO peripheral base pointer */
+#define BOARD_INITPINS_AC_DC_GPIO_PIN_MASK (1U << 1U) /*!<@brief GPIO pin mask */
+
+/* Symbols to be used with PORT driver */
+#define BOARD_INITPINS_AC_DC_PORT PORTD               /*!<@brief PORT peripheral base pointer */
+#define BOARD_INITPINS_AC_DC_PIN 1U                   /*!<@brief PORT pin number */
+#define BOARD_INITPINS_AC_DC_PIN_MASK (1U << 1U)      /*!<@brief PORT pin mask */
+                                                      /* @} */
 
 /*!
  * @brief Configures pin routing and optionally pin electrical features.

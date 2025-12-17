@@ -5,7 +5,7 @@ lvgl/lvgl/src/extra/widgets/keyboard/lv_keyboard.o \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/lv_btnmatrix.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../lv_conf_internal.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/lv_obj.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../lv_conf_internal.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/lv_style.h \
@@ -13,7 +13,7 @@ lvgl/lvgl/src/extra/widgets/keyboard/lv_keyboard.o \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/../lv_conf_internal.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/lv_symbol_def.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/../misc/lv_area.h \
- ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/../misc/../lv_conf_internal.h \
+ C:/Users/elisa/Documents/portable-oscilloscope-pi3/src/PI_3_mais_atualizado/lvgl/lvgl/src/lv_conf_internal.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/lv_color.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/lv_math.h \
@@ -89,7 +89,7 @@ lvgl/lvgl/src/extra/widgets/keyboard/lv_keyboard.o \
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/lv_btnmatrix.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../lv_conf_internal.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/lv_obj.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../lv_conf_internal.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/lv_style.h:
@@ -97,7 +97,7 @@ C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/../lv_conf_internal.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/lv_symbol_def.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/../misc/lv_area.h:
-../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../font/../misc/../lv_conf_internal.h:
+C:/Users/elisa/Documents/portable-oscilloscope-pi3/src/PI_3_mais_atualizado/lvgl/lvgl/src/lv_conf_internal.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/lv_color.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/extra/widgets/keyboard/../../../widgets/../core/../misc/lv_math.h:

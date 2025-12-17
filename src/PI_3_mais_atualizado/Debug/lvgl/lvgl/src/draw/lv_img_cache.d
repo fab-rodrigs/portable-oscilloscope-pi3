@@ -3,7 +3,7 @@ lvgl/lvgl/src/draw/lv_img_cache.o lvgl/lvgl/src/draw/lv_img_cache.d: \
  ../lvgl/lvgl/src/draw/../misc/lv_assert.h \
  ../lvgl/lvgl/src/draw/../misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/draw/../misc/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/draw/lv_img_cache.h \
  ../lvgl/lvgl/src/draw/lv_img_decoder.h \
  ../lvgl/lvgl/src/draw/../lv_conf_internal.h \
@@ -45,7 +45,7 @@ lvgl/lvgl/src/draw/lv_img_cache.o lvgl/lvgl/src/draw/lv_img_cache.d: \
 ../lvgl/lvgl/src/draw/../misc/lv_assert.h:
 ../lvgl/lvgl/src/draw/../misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/draw/../misc/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/draw/lv_img_cache.h:
 ../lvgl/lvgl/src/draw/lv_img_decoder.h:
 ../lvgl/lvgl/src/draw/../lv_conf_internal.h:

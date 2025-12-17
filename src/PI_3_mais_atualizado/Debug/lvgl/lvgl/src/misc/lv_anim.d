@@ -2,7 +2,7 @@ lvgl/lvgl/src/misc/lv_anim.o lvgl/lvgl/src/misc/lv_anim.d: \
  ../lvgl/lvgl/src/misc/lv_anim.c ../lvgl/lvgl/src/misc/lv_anim.h \
  ../lvgl/lvgl/src/misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/misc/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/misc/../misc/lv_assert.h \
  ../lvgl/lvgl/src/misc/../misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/misc/../hal/lv_hal_tick.h \
@@ -29,7 +29,7 @@ lvgl/lvgl/src/misc/lv_anim.o lvgl/lvgl/src/misc/lv_anim.d: \
 ../lvgl/lvgl/src/misc/lv_anim.h:
 ../lvgl/lvgl/src/misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/misc/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/misc/../misc/lv_assert.h:
 ../lvgl/lvgl/src/misc/../misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/misc/../hal/lv_hal_tick.h:

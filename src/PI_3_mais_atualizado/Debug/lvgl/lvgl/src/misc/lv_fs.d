@@ -2,7 +2,7 @@ lvgl/lvgl/src/misc/lv_fs.o lvgl/lvgl/src/misc/lv_fs.d: \
  ../lvgl/lvgl/src/misc/lv_fs.c ../lvgl/lvgl/src/misc/lv_fs.h \
  ../lvgl/lvgl/src/misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/misc/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/misc/../misc/lv_assert.h \
  ../lvgl/lvgl/src/misc/../misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/misc/lv_ll.h ../lvgl/lvgl/src/misc/lv_gc.h \
@@ -26,7 +26,7 @@ lvgl/lvgl/src/misc/lv_fs.o lvgl/lvgl/src/misc/lv_fs.d: \
 ../lvgl/lvgl/src/misc/lv_fs.h:
 ../lvgl/lvgl/src/misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/misc/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/misc/../misc/lv_assert.h:
 ../lvgl/lvgl/src/misc/../misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/misc/lv_ll.h:

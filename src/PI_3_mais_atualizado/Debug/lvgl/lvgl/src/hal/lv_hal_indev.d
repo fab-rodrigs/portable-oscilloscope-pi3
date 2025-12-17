@@ -3,7 +3,7 @@ lvgl/lvgl/src/hal/lv_hal_indev.o lvgl/lvgl/src/hal/lv_hal_indev.d: \
  ../lvgl/lvgl/src/hal/../misc/lv_assert.h \
  ../lvgl/lvgl/src/hal/../misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/hal/../misc/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/hal/../hal/lv_hal_indev.h \
  ../lvgl/lvgl/src/hal/../hal/../lv_conf_internal.h \
  ../lvgl/lvgl/src/hal/../hal/../misc/lv_area.h \
@@ -94,7 +94,7 @@ lvgl/lvgl/src/hal/lv_hal_indev.o lvgl/lvgl/src/hal/lv_hal_indev.d: \
 ../lvgl/lvgl/src/hal/../misc/lv_assert.h:
 ../lvgl/lvgl/src/hal/../misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/hal/../misc/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/hal/../hal/lv_hal_indev.h:
 ../lvgl/lvgl/src/hal/../hal/../lv_conf_internal.h:
 ../lvgl/lvgl/src/hal/../hal/../misc/lv_area.h:

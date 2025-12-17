@@ -54,28 +54,43 @@
 #define CTRL_GPIO GPIOD
 #define CTRL_PORT PORTD
 #define AC_DC_PIN 1U // PTD1: 1=AC, 0=DC
-#define ATTEN_10X_PIN 2U // PTD2: 1=10x, 0=1x
-#define DIV_2_PIN 3U // PTD3: 1=/2, 0=/5
+#define ATTEN_10X_PIN 2U // PTD2: 1=10x, 0=1x /10
+#define DIV_2_PIN 3U // PTD3: 1=/2, 0=/5 /2,6
 
 // Escalas do gráfico (em pixels, centralizado em 0V)
+/*
 typedef struct {
     lv_coord_t min;
     lv_coord_t max;
 } scale_setting_t;
+
 static const scale_setting_t scales[] = {
 	{ -120,  120 },   // 100 mV/div  → ±500 mV  (mais usado)
-	{ -96,   96  },   //  80 mV/div  → ±400 mV
 	{ -60,   60  },   //  50 mV/div  → ±250 mV
-	{ -48,   48  },   //  40 mV/div  → ±200 mV
-	{ -24,   24  },   //  20 mV/div  → ±100 mV
-	{ -12,   12  },   //  10 mV/div  → ±50 mV
-	{ -6,    6   },   //   5 mV/div  → ±25 mV
-	{ -3,    3   }    //   2 mV/div  → ±10 mV  (limite prático com sua sonda)
+	{ -24,   24  }   //  20 mV/div  → ±100 mV
 };
+
+*/
+typedef struct {
+    lv_coord_t min;
+    lv_coord_t max;
+    uint8_t vdiv_count;   // número de divisões verticais
+    const char *label;
+} scope_scale_t;
+
+static const scope_scale_t scales[] = {
+    { -120, 120,  9,  "5V/div" },
+    { -60,   60,  7, "2V/div"  },
+    { -24,   24,  5, "1V/div"  }
+};
+
+#define NUM_SCALES (sizeof(scales) / sizeof(scales[0]))
+
+
 const char* scale_texts[] = {
-    "2V/div", "1V/div", "500mV", "200mV", "100mV", "50mV", "20mV", "10mV", "5mV", "2mV"
-};
-#define NUM_SCALES (sizeof(scales) / sizeof(scale_setting_t))
+    "5V/div", "2V/div", "1V/div"};
+
+//#define NUM_SCALES (sizeof(scales) / sizeof(scope_scale_t))
 #define BATTERY_CHANNEL 1  // ADC0_SE1 (DP1)
 #define BATTERY_ADC     ADC0
 #define BATTERY_SAMPLES 64
@@ -163,6 +178,10 @@ static uint8_t bat_idx = 0;
 static uint32_t bat_sum = 0;
 static bool bat_first = true;
 uint32_t aligned_buffer[DMA_BUFFER_SIZE];
+
+#define SCREEN_HEIGHT 240
+#define CENTER_Y      (SCREEN_HEIGHT / 2)
+
 
 /* Funções Auxiliares --------------------------------------------------------*/
 long map(long x, long in_min, long in_max, long out_min, long out_max) {
@@ -281,17 +300,39 @@ static void scale_button_event_handler(lv_event_t * e)
     lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y,
                        scales[current_scale_index].min,
                        scales[current_scale_index].max);
-
-    // 3. REESCREVE TODOS OS PONTOS com a nova escala (ESSENCIAL!)
+    //3. ATUALIZA O NÚMERO DE DIVISÕES (AQUI ESTÁ O SEGREDO)
+    lv_chart_set_div_line_count(chart,
+                                scales[current_scale_index].vdiv_count,
+                                OSC_GRID_VDIV_COUNT);
+    // 4. REESCREVE TODOS OS PONTOS com a nova escala (ESSENCIAL!)
     for (int i = 0; i < DMA_BUFFER_SIZE; i++) {
         uint32_t raw = aligned_buffer[i] & 0x3FF;
         int32_t centered = (int32_t)raw - (512 + g_vertical_offset);
+
         int16_t y = map(centered, -512, 511,
                         scales[current_scale_index].min,
                         scales[current_scale_index].max);
         lv_chart_set_value_by_id(chart, ser, i, y);
     }
 
+    lv_chart_refresh(chart);
+    lv_label_set_text(scale_button_label,
+                         scales[current_scale_index].label);
+    /*
+    lv_coord_t zero_y = map(g_vertical_offset,
+                            -512, 511,
+                            239, 0);
+
+    lv_obj_set_y(zero_level_label, CENTER_Y);
+    */
+    lv_coord_t zero_y = CENTER_Y - map(g_vertical_offset,
+                                       -512, 511,
+                                       -CENTER_Y, CENTER_Y);
+
+    lv_obj_set_y(zero_level_label, zero_y);
+
+
+    /*
     // 4. Atualiza posição do marcador de 0V (com a nova escala)
     lv_coord_t zero_y = map(512 + g_vertical_offset, 0, 1023, 239, 0);  // invertido!
     lv_obj_set_y(zero_level_label, zero_y);
@@ -309,6 +350,7 @@ static void scale_button_event_handler(lv_event_t * e)
     char btn_text[20];
     sprintf(btn_text, "Scale\n%s", scale_texts[current_scale_index]);
     lv_label_set_text(scale_button_label, btn_text);
+    */
 }
 // ==========================================================
 // Handlers dos Botões
@@ -427,10 +469,24 @@ void UI_Create(void) {
     lv_obj_set_size(chart, 320, 240);
     lv_obj_align(chart, LV_ALIGN_TOP_RIGHT, 0, 0);
     lv_chart_set_type(chart, LV_CHART_TYPE_LINE);
-    lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, scales[0].min, scales[0].max);
+
+    //lv_chart_set_range(chart, LV_CHART_AXIS_PRIMARY_Y, scales[0].min, scales[0].max);
+
     lv_chart_set_point_count(chart, OSC_X_POINT_COUNT);
-    lv_chart_set_div_line_count(chart, OSC_GRID_HDIV_COUNT, OSC_GRID_VDIV_COUNT);
+    // gerar linhas
+    //lv_chart_set_div_line_count(chart, OSC_GRID_HDIV_COUNT, OSC_GRID_VDIV_COUNT);
+/*
+    lv_chart_set_div_line_count(chart,
+                                OSC_GRID_HDIV_COUNT,
+                                scales[0].vdiv_count);
+  */
+    lv_chart_set_div_line_count(chart,
+                                scales[current_scale_index].vdiv_count, // linhas horizontais
+                                OSC_GRID_VDIV_COUNT);                    // verticais fixas
+
+
     ser = lv_chart_add_series(chart, lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+
     lv_obj_set_style_line_width(chart, 2, LV_PART_ITEMS);
     lv_obj_set_style_border_width(chart, 0, 0);
     lv_obj_set_style_size(chart, 0, LV_PART_INDICATOR);
@@ -627,6 +683,26 @@ void KSDK_GPIO_Init(void) {
 
 }
 
+typedef enum {
+    COUPLING_DC,
+    COUPLING_AC
+} coupling_t;
+
+typedef enum {
+    PROBE_1X,
+    PROBE_10X
+} probe_t;
+
+typedef enum {
+    DIV_2,
+    DIV_5
+} divider_t;
+
+coupling_t g_coupling;
+probe_t    g_probe;
+divider_t  g_divider;
+
+
 static void update_probe_state(void)
 {
     // Leitura direta dos pinos
@@ -634,6 +710,46 @@ static void update_probe_state(void)
     bool att1x = GPIO_PinRead(CTRL_GPIO, ATTEN_10X_PIN);   // 1 = 1x, 0 = 10x
     bool div5  = GPIO_PinRead(CTRL_GPIO, DIV_2_PIN);       // 1 = /5, 0 = /2
 
+    // ====== AC / DC ======
+	if (dc) {
+		g_coupling = COUPLING_DC;
+		lv_label_set_text(info_label, "Cpl: DC");
+	} else {
+		g_coupling = COUPLING_AC;
+		lv_label_set_text(info_label, (dc ? "DC=1\r\n" : "DC=0\r\n"));
+	}
+
+	// ====== Sonda ======
+	float probe_factor;
+	if (att1x) {
+		g_probe = PROBE_1X;
+		probe_factor = 1.0f;
+	} else {
+		g_probe = PROBE_10X;
+		probe_factor = 8.7f;
+	}
+
+    // ====== Divisor ======
+    float div_factor;
+    if (div5) {
+        g_divider = DIV_5;
+        div_factor = 2.82f;
+    } else {
+        g_divider = DIV_2;
+        div_factor = 1.05f;
+    }
+
+    // ====== Ganho total ======
+    g_total_gain = probe_factor * div_factor;
+
+    // ====== Label ======
+    char txt[64];
+    snprintf(txt, sizeof(txt),
+             "Sonda: %dx /%d",
+             (g_probe == PROBE_1X) ? 1 : 10,
+             (g_divider == DIV_2) ? 2 : 5);
+    lv_label_set_text(probe_label, txt);
+    /*
     float divisor = div5 ? 4.3f : 1.82f;
     g_total_gain = (att1x ? 1.0f : 7.5f) * divisor; // garanta que g_total_gain seja float/double
     int div = (int)divisor;
@@ -644,7 +760,9 @@ static void update_probe_state(void)
     char txt[64];
     snprintf(txt, sizeof(txt), "Sonda: %dx /%d.%d", att1x ? 1 : 10, div, div_dec);
     lv_label_set_text(probe_label, txt);
+    */
 }
+
 
 
 uint16_t read_battery_raw(void)
@@ -718,7 +836,7 @@ int main(void) {
 
     // Inicia a conversão contínua
     ADC16_SetChannelConfig(ADC1_PERIPHERAL, ADC_CHANNEL_GROUP, &adc16ChannelConfig);
-    int fs_hz = 300000;
+    int fs_hz = 350000;
     PIT_Init(fs_hz);
 
     Delay_ms(100);
@@ -861,7 +979,8 @@ int main(void) {
 			    int32_t raw_adc = aligned_buffer[i] & 0x3FF;
 
 			    // 2) Remove o offset físico de 397 (1,28V)
-			    int32_t raw_corr = raw_adc - 397;
+			    //int32_t raw_corr = raw_adc - 397;
+			    int32_t raw_corr = raw_adc - 385;//ruiderraaaa
 
 			    // 3) Estatísticas devem ser feitas NO SINAL CORRIGIDO
 			    if (raw_corr < min_val) min_val = raw_corr;
@@ -890,8 +1009,13 @@ int main(void) {
 
 			// Converte para volts
 			double v_pp  = (vpp_adc  / ADC_MAX_COUNTS) * V_REF * g_total_gain;
+			//double v_pp  = (vpp_adc  / ADC_MAX_COUNTS) * V_REF;
+
 			double v_med = (vmed_adc / ADC_MAX_COUNTS) * V_REF * g_total_gain;
+			//double v_med = (vmed_adc / ADC_MAX_COUNTS) * V_REF;
+
 			double v_rms = (vrms_adc / ADC_MAX_COUNTS) * V_REF * g_total_gain;
+			//double v_rms = (vrms_adc / ADC_MAX_COUNTS) * V_REF;
 
 			lv_chart_refresh(chart);
 
@@ -905,7 +1029,7 @@ int main(void) {
 			// ========== Formatação ==========
 			int32_t vpp_int  = (int32_t)v_pp;
 			int32_t vpp_frac = (int32_t)((v_pp - vpp_int) * 100);
-
+			//13854, 71
 			int32_t vmed_int  = (int32_t)v_med;
 			int32_t vmed_frac = (int32_t)((v_med - vmed_int) * 100);
 
@@ -920,28 +1044,65 @@ int main(void) {
             uint32_t freq_sinal_hz = 0;
             int n_samples = 0;
             int32_t trigger_centered = g_trigger_level - 512;
-            for (int i = g_trigger_x_pos + 10; i < DMA_BUFFER_SIZE; i++) {
-                int32_t last_centered = ((aligned_buffer[i-1] & 0x3FF) - 512 - g_vertical_offset);
-                int32_t curr_centered = ((aligned_buffer[i] & 0x3FF) - 512 - g_vertical_offset);
-                bool edge_found = false;
-                if (g_trigger_edge == RISING_EDGE &&
-                    last_centered < trigger_centered &&
-                    curr_centered >= trigger_centered) {
-                    edge_found = true;
-                }
-                else if (g_trigger_edge == FALLING_EDGE &&
-                         last_centered > trigger_centered &&
-                         curr_centered <= trigger_centered) {
-                    edge_found = true;
-                }
-                if (edge_found) {
-                    n_samples = i - g_trigger_x_pos;
-                    break;
+
+            int first_edge = -1;
+            int second_edge = -1;
+			#define NUM_PERIODOS 4
+            int crossings[NUM_PERIODOS + 1];
+            int cross_count = 0;
+
+            for (int i = 1; i < DMA_BUFFER_SIZE; i++) {
+                int32_t anterior = (local_buffer[i-1] & 0x3FF) - 512;
+                int32_t atual     = (local_buffer[i]   & 0x3FF) - 512;
+
+                if (anterior < 0 && atual >= 0) { // cruzamento do zero
+                    if (first_edge < 0) first_edge = i;
+                    else { second_edge = i; break; }
                 }
             }
-            if (n_samples > 0) {
-                freq_sinal_hz = fs_hz / n_samples;
+
+
+
+            if (first_edge >= 0 && second_edge > first_edge) {
+                uint32_t periodo = second_edge - first_edge;
+                freq_sinal_hz = fs_hz / periodo;
+            } else {
+                freq_sinal_hz = 0xFFFFFFFF; // debug: valor "impossível" se não achou cruzamento
             }
+
+            if (first_edge >= 0 && second_edge > first_edge) {
+                uint32_t period_samples = second_edge - first_edge;
+                freq_sinal_hz = fs_hz / period_samples;
+            }
+            ////////////////////
+            /*
+            // Detecta cruzamentos de zero (subida)
+             for (int i = 1; i < DMA_BUFFER_SIZE && cross_count < (NUM_PERIODOS + 1); i++) {
+
+                 int32_t last = (aligned_buffer[i-1] & 0x3FF) - 512;
+                 int32_t curr = (aligned_buffer[i]   & 0x3FF) - 512;
+
+                 if (last < 0 && curr >= 0) {
+                     crossings[cross_count++] = i;
+                 }
+             }
+            // Só calcula se encontrou cruzamentos suficientes
+            if (cross_count >= (NUM_PERIODOS + 1)) {
+
+                uint32_t sum_periods = 0;
+
+                for (int k = 0; k < NUM_PERIODOS; k++) {
+                    sum_periods += (crossings[k+1] - crossings[k]);
+                }
+
+                uint32_t avg_period_samples = sum_periods / NUM_PERIODOS;
+
+                if (avg_period_samples > 0) {
+                    freq_sinal_hz = fs_hz / avg_period_samples;
+                }
+            }*/
+
+
             // ==========================================================
             // Atualize o Label (com Frequência do Sinal)
             sprintf(info_text, "CH1\nVpp: %ld.%02ldV\nVmed: %ld.%02ldV\nVrms: %ld.%02ldV\nFreq: %lu Hz",

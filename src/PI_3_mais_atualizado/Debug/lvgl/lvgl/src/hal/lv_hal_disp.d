@@ -4,7 +4,7 @@ lvgl/lvgl/src/hal/lv_hal_disp.o lvgl/lvgl/src/hal/lv_hal_disp.d: \
  ../lvgl/lvgl/src/hal/../misc/lv_color.h \
  ../lvgl/lvgl/src/hal/../misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/hal/../misc/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/hal/../misc/lv_math.h \
  ../lvgl/lvgl/src/hal/../misc/lv_types.h \
  ../lvgl/lvgl/src/hal/../misc/lv_area.h \
@@ -95,7 +95,7 @@ lvgl/lvgl/src/hal/lv_hal_disp.o lvgl/lvgl/src/hal/lv_hal_disp.d: \
 ../lvgl/lvgl/src/hal/../misc/lv_color.h:
 ../lvgl/lvgl/src/hal/../misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/hal/../misc/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/hal/../misc/lv_math.h:
 ../lvgl/lvgl/src/hal/../misc/lv_types.h:
 ../lvgl/lvgl/src/hal/../misc/lv_area.h:

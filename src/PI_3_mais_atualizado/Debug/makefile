@@ -64,7 +64,7 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := PI_3_mais_atualizado
+BUILD_ARTIFACT_NAME := PI_3
 BUILD_ARTIFACT_EXTENSION := axf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
@@ -76,24 +76,24 @@ all:
 	+@$(MAKE) --no-print-directory main-build && $(MAKE) --no-print-directory post-build
 
 # Main-build Target
-main-build: PI_3_mais_atualizado.axf
+main-build: PI_3.axf
 
 # Tool invocations
-PI_3_mais_atualizado.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
+PI_3.axf: $(OBJS) $(USER_OBJS) makefile $(OPTIONAL_TOOL_DEPS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: MCU Linker'
-	arm-none-eabi-gcc -nostdlib -L"C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\mmcau\asm-cm4-cm7" -Xlinker -Map="PI_3_mais_atualizado.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T PI_3_mais_atualizado_Debug.ld -o "PI_3_mais_atualizado.axf" $(OBJS) $(USER_OBJS) $(LIBS) -l_mmcau
+	arm-none-eabi-gcc -nostdlib -L"C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\mmcau\asm-cm4-cm7" -Xlinker -Map="PI_3.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -T PI_3_Debug.ld -o "PI_3.axf" $(OBJS) $(USER_OBJS) $(LIBS) -l_mmcau
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) PI_3_mais_atualizado.axf
+	-$(RM) PI_3.axf
 	-@echo ' '
 
 post-build:
 	-@echo 'Performing post-build steps'
-	-arm-none-eabi-size "PI_3_mais_atualizado.axf"; # arm-none-eabi-objcopy -v -O binary "PI_3_mais_atualizado.axf" "PI_3_mais_atualizado.bin" ; # checksum -p MK64FN1M0xxx12 -d "PI_3_mais_atualizado.bin";
+	-arm-none-eabi-size "PI_3.axf"; # arm-none-eabi-objcopy -v -O binary "PI_3.axf" "PI_3.bin" ; # checksum -p MK64FN1M0xxx12 -d "PI_3.bin";
 	-@echo ' '
 
 .PHONY: all clean dependents main-build post-build

@@ -7,7 +7,7 @@ lvgl/lvgl/src/extra/widgets/spinner/lv_spinner.o \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_log.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/../lv_conf_internal.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_timer.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_mem.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_log.h \
@@ -148,7 +148,7 @@ lvgl/lvgl/src/extra/widgets/spinner/lv_spinner.o \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/list/lv_list.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/list/../../../core/lv_obj.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/list/../../layouts/flex/lv_flex.h \
- C:/Users/Acer-PC/Documents/MCUXpressoIDE_25.6.136/workspace/PI_3_mais_atualizado/lvgl/lvgl/src/core/lv_obj.h \
+ C:/Users/elisa/Documents/portable-oscilloscope-pi3/src/PI_3_mais_atualizado/lvgl/lvgl/src/core/lv_obj.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/msgbox/lv_msgbox.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/msgbox/../../../lvgl.h \
  ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/meter/lv_meter.h \
@@ -187,7 +187,7 @@ lvgl/lvgl/src/extra/widgets/spinner/lv_spinner.o \
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_log.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/../lv_conf_internal.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_timer.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_mem.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/misc/lv_log.h:
@@ -328,7 +328,7 @@ C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/list/lv_list.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/list/../../../core/lv_obj.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/list/../../layouts/flex/lv_flex.h:
-C:/Users/Acer-PC/Documents/MCUXpressoIDE_25.6.136/workspace/PI_3_mais_atualizado/lvgl/lvgl/src/core/lv_obj.h:
+C:/Users/elisa/Documents/portable-oscilloscope-pi3/src/PI_3_mais_atualizado/lvgl/lvgl/src/core/lv_obj.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/msgbox/lv_msgbox.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/msgbox/../../../lvgl.h:
 ../lvgl/lvgl/src/extra/widgets/spinner/../../../../src/extra/widgets/meter/lv_meter.h:

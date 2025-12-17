@@ -2,7 +2,7 @@ lvgl/lvgl/src/core/lv_event.o lvgl/lvgl/src/core/lv_event.d: \
  ../lvgl/lvgl/src/core/lv_event.c ../lvgl/lvgl/src/core/lv_obj.h \
  ../lvgl/lvgl/src/core/../lv_conf_internal.h \
  ../lvgl/lvgl/src/core/../lv_conf_kconfig.h \
- C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
+ C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h \
  ../lvgl/lvgl/src/core/../misc/lv_style.h \
  ../lvgl/lvgl/src/core/../misc/../font/lv_font.h \
  ../lvgl/lvgl/src/core/../misc/../font/../lv_conf_internal.h \
@@ -76,7 +76,7 @@ lvgl/lvgl/src/core/lv_event.o lvgl/lvgl/src/core/lv_event.d: \
 ../lvgl/lvgl/src/core/lv_obj.h:
 ../lvgl/lvgl/src/core/../lv_conf_internal.h:
 ../lvgl/lvgl/src/core/../lv_conf_kconfig.h:
-C:\Users\Acer-PC\Documents\MCUXpressoIDE_25.6.136\workspace\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
+C:\Users\elisa\Documents\portable-oscilloscope-pi3\src\PI_3_mais_atualizado\lvgl\template/lv_conf.h:
 ../lvgl/lvgl/src/core/../misc/lv_style.h:
 ../lvgl/lvgl/src/core/../misc/../font/lv_font.h:
 ../lvgl/lvgl/src/core/../misc/../font/../lv_conf_internal.h:
