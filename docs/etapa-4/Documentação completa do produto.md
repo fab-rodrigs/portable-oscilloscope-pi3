@@ -4,7 +4,7 @@
 
 Este documento descreve as especificações técnicas e o funcionamento de um osciloscópio portátil projetado para medições de sinais elétricos de forma compacta e autônoma. O dispositivo é alimentado por bateria recarregável e integra um microcontrolador **FRDM-K64F** para processamento de sinais. Ele possui um display **TFT LCD** com touch screen para visualização e interação, além de capacidade de envio de dados via serial para um software complementar em um computador conectado.
 
-O osciloscópio é ideal para aplicações educacionais, de prototipagem e de campo, onde a portabilidade é essencial. Ele suporta condicionamento de sinal analógico, amostragem via ADC e exibição de métricas chave do sinal.
+O osciloscópio é ideal para aplicações educacionais, de prototipagem e de campo, onde a portabilidade é essencial. Ele suporta condicionamento de sinal analógico, amostragem via ADC e exibição de métricas chave do sinal, aliando mobilidade, segurança elétrica e integração com sistemas externos.
 
 ---
 
@@ -14,9 +14,24 @@ O osciloscópio é ideal para aplicações educacionais, de prototipagem e de ca
 
 - **Microcontrolador:** FRDM-K64F (baseado em ARM Cortex-M4).  
 - **Display:** TFT LCD de 2.4 polegadas com touch screen para interface de usuário.  
-- **Alimentação:** Bateria recarregável de **4.2 V**, com carregamento via porta **micro-USB** localizada na parte superior do dispositivo.  
-- **Indicador de Bateria:** Percentual de nível de bateria exibido na tela, medido através de um canal ADC.  
+- **Alimentação:** Bateria recarregável de **4.2 V**.  
+- **Gerenciamento de Bateria:** Placa **TP4056**, responsável pelo controle de carga, proteção contra sobrecarga e segurança energética da bateria.  
+- **Carregamento:** Realizado via porta **micro-USB**, localizada na parte superior do dispositivo.  
+- **Indicador de Bateria:** Percentual de nível de bateria exibido na tela, medido através de um canal ADC do microcontrolador.  
 - **Entrada de Sinal:** Placa analógica dedicada para condicionamento do sinal antes da entrada no ADC do microcontrolador.
+
+### Gerenciamento e Segurança da Bateria (TP4056)
+
+O sistema de alimentação utiliza uma placa **TP4056**, que realiza a gestão completa da bateria recarregável, garantindo:
+
+- Controle automático do processo de carga da bateria de 4.2 V.  
+- Proteção contra **sobrecarga**, evitando danos à bateria e aumentando sua vida útil.  
+- Segurança energética durante o carregamento via micro-USB.  
+- Operação segura do sistema mesmo durante o processo de carga.
+
+A utilização da TP4056 assegura que o osciloscópio possa ser utilizado e recarregado de forma confiável, reduzindo riscos de falhas elétricas e degradação prematura da bateria.
+
+---
 
 ### Amostragem
 
@@ -36,7 +51,7 @@ O osciloscópio é ideal para aplicações educacionais, de prototipagem e de ca
 - **Tensão DC:** máxima de **+30 V**, mínima de **−30 V**.  
 - **Tensão AC:** máxima de **+15 V**, mínima de **−16 V**.
 
-Essas limitações garantem a integridade do hardware e a precisão das medições, evitando sobrecarga no circuito de condicionamento ou no ADC.
+Essas limitações garantem a integridade do hardware e a precisão das medições, evitando sobrecarga no circuito de condicionamento ou no ADC do microcontrolador.
 
 ---
 
@@ -64,7 +79,7 @@ O dispositivo possui **4 chaves físicas** para configuração e operação:
 - **Para cima:** **AC** (Alternada).  
 - **Para baixo:** **DC** (Contínua).
 
-Essas chaves permitem ao usuário adaptar o dispositivo a diferentes tipos de sinais sem necessidade de configurações digitais complexas.
+Essas chaves permitem ao usuário adaptar o dispositivo a diferentes tipos de sinais sem necessidade de configurações digitais complexas, tornando o uso rápido e intuitivo.
 
 ---
 
@@ -74,7 +89,7 @@ Essas chaves permitem ao usuário adaptar o dispositivo a diferentes tipos de si
 
 - O sinal de entrada é condicionado pela placa analógica para se adequar à faixa de operação do ADC.  
 - O **DMA** gerencia a transferência de dados para o buffer de **1000 amostras** em modo ping-pong, permitindo captura contínua sem perda de dados.  
-- A taxa de amostragem de **350 kHz** é fixa e controlada pelo **PIT**.
+- A taxa de amostragem de **350 kHz** é fixa e controlada pelo **PIT**, garantindo precisão temporal.
 
 ### Exibição no Display
 
@@ -91,14 +106,14 @@ O display TFT LCD de 2.4" com touch screen exibe:
   - Atenuação de escala (1x ou 10x).  
 - Indicador percentual de bateria.
 
-O touch screen permite interações básicas, como navegação em menus ou ajustes finos (se implementados no firmware).
+O touch screen permite interações básicas, como navegação em menus ou ajustes finos, conforme implementado no firmware.
 
 ### Integração com Software Externo
 
 - **Envio de Dados:** Dados brutos do ADC são enviados via serial para um computador conectado ao microcontrolador.  
 - **Software Complementar (no computador):**
   - Replica a imagem do osciloscópio (forma de onda e métricas).  
-  - Realiza cálculos mais complexos (ex.: análises avançadas de sinal, transformadas, etc.).  
+  - Realiza cálculos mais complexos (ex.: análises avançadas de sinal, transformadas, estatísticas).  
   - Permite salvar os dados capturados em arquivos para análise posterior.
 
 ---
@@ -118,16 +133,16 @@ O touch screen permite interações básicas, como navegação em menus ou ajust
 
 ## Considerações de Uso e Manutenção
 
-- **Carregamento:** Use a porta micro-USB para recarregar a bateria de 4.2 V. Monitore o indicador de bateria para evitar desligamentos inesperados.  
-- **Segurança:** Respeite as limitações de tensão e frequência para evitar danos ao hardware. Sempre configure as chaves de atenuação apropriadamente antes de aplicar sinais.  
-- **Firmware e Software:** O firmware no FRDM-K64F gerencia a amostragem e exibição. O software no PC deve ser compatível com a comunicação serial (detalhes de protocolo não especificados aqui; consulte o código-fonte).  
-- **Manutenção:** Verifique periodicamente a bateria e conexões. Evite exposição a umidade ou temperaturas extremas. Substitua bateria por componente equivalente aprovado quando necessário.
+- **Carregamento:** Utilize a porta micro-USB para recarregar a bateria de 4.2 V. O módulo **TP4056** garante proteção contra sobrecarga durante o processo.  
+- **Segurança:** Respeite rigorosamente as limitações de tensão e frequência para evitar danos ao hardware. Sempre configure as chaves de atenuação antes de aplicar sinais ao dispositivo.  
+- **Firmware e Software:** O firmware no FRDM-K64F gerencia a amostragem, processamento e exibição. O software no PC deve ser compatível com a comunicação serial utilizada.  
+- **Manutenção:** Verifique periodicamente a integridade da bateria, da placa TP4056 e das conexões. Evite exposição a umidade, poeira excessiva ou temperaturas extremas.
 
 ---
 
 ## Contribuições e Atualizações
 
-Esta documentação pode ser atualizada conforme evoluções no projeto. Contribuições são bem-vindas via **pull requests** no repositório GitHub. Para mais detalhes sobre o código-fonte, consulte os arquivos no repositório.
+Esta documentação pode ser atualizada conforme evoluções no projeto. Contribuições são bem-vindas via **pull requests** no repositório GitHub. Para mais detalhes sobre o código-fonte, consulte os arquivos disponíveis no repositório.
 
 ---
 
