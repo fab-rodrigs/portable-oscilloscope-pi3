@@ -29,7 +29,7 @@ Neste diretório você encontrará os seguintes arquivos:
 - Iniciar pela **[Apresentação final do produto](./Apresentação%20final%20do%20produto.md)**  
 - Consultar os detalhes técnicos na **[Documentação completa do produto](./Documentação%20completa%20do%20produto.md)**  
 - Verificar a validação no **[Relatório final de testes](./Relatório%20final%20de%20testes.md)**  
-- Assistir à demonstração no **[Vídeo de demonstração](./Video%20de%20demonstração.md)**
+- Assistir à demonstração no **[Vídeo de demonstração](./Video%20de%20demonstração.mp4)**
 
 ---
 
