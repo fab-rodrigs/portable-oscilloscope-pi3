@@ -105,6 +105,8 @@ Os testes confirmaram o funcionamento correto do sistema para frequências de at
 
 ![Testes](imagens/teste.jpeg)
 
+
+
 ## Conclusão
 
 Após as correções implementadas, o sistema apresentou medições estáveis, coerentes e confiáveis, tanto em amplitude quanto em frequência. A separação clara entre correções físicas do sinal e ajustes gráficos foi fundamental para eliminar inconsistências observadas anteriormente, resultando em um osciloscópio embarcado funcional e validado experimentalmente.
@@ -115,6 +117,11 @@ Após as correções implementadas, o sistema apresentou medições estáveis, c
 O colega estava visualizando sua onda PWM com alto Duty Cycle.
 
 ![Teste com externo](imagens/Validacao_externo.jpeg)
+
+As colegas viram no osciloscópio a variação do Duty Cycle do PWM delas, na placa FPGA.
+
+![Testes](imagens/teste_externo_2.jpeg)
+
 
 
 
