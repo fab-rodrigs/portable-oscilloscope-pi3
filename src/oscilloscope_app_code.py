@@ -2,48 +2,91 @@ import serial
 import matplotlib.pyplot as plt
 import numpy as np
 
+# =====================================================
+# CONFIGURAÇÕES
+# =====================================================
 PORTA = "COM10"
-BAUD = 1000000
+BAUD = 1_000_000
 
-# abre porta
+ADC_MAX = 1023
+VREF = 3.3
+
+OFFSET_FISICO = 385        # offset DC do front-end (igual MCC)
+GANHO_TOTAL = 1.0          # ajuste se houver amplificação
+
+FS = 350_000               # Hz (mesma taxa do firmware)
+
+# =====================================================
+# TEMA OSCILOSCÓPIO
+# =====================================================
+plt.style.use("dark_background")
+
+# =====================================================
+# SERIAL
+# =====================================================
 ser = serial.Serial(PORTA, BAUD, timeout=1)
 
-# prepara gráfico
+# =====================================================
+# FIGURA
+# =====================================================
 plt.ion()
-fig, ax = plt.subplots()
-linha_plot, = ax.plot([], [])
-ax.set_ylim(0, 1023)      # resolução do ADC
-ax.set_xlim(0, 500)       # assume ~500 pontos por frame (ajuste depois)
+fig, ax = plt.subplots(figsize=(10, 5))
 
-print("Plotando em tempo real...")
+fig.patch.set_facecolor("black")
+ax.set_facecolor("black")
 
+linha_plot, = ax.plot([], [], color="#00ff00", linewidth=1.2)
+
+ax.set_ylim(-512, 512)     # agora centrado em zero (pós-offset)
+ax.set_xlim(0, 500)
+
+ax.grid(color="#222222")
+
+# =====================================================
+# TEXTO NA TELA (HUD)
+# =====================================================
+info_text = ax.text(
+    0.02, 0.98, "",
+    transform=ax.transAxes,
+    fontsize=12,
+    color="yellow",
+    verticalalignment="top",
+    bbox=dict(facecolor="black", alpha=0.6)
+)
+
+print("Osciloscópio em execução...")
+
+# =====================================================
+# LOOP PRINCIPAL
+# =====================================================
 while True:
     try:
         raw = ser.readline().decode(errors="ignore").strip()
-
         if not raw:
             continue
 
-        # remove a primeira vírgula e divide
-        # exemplo: ",67,72,44"  -> ["67","72","44"]
         partes = raw.split(",")[1:]
-
-        # converte para int
         dados = [int(x) for x in partes if x.isdigit()]
-
-        if len(dados) == 0:
+        if len(dados) < 10:
             continue
 
-        # atualiza gráfico
-        linha_plot.set_ydata(dados)
-        linha_plot.set_xdata(np.arange(len(dados)))
+        arr = np.array(dados)
 
-        ax.set_xlim(0, len(dados))
+        # =================================================
+        # REMOVE OFFSET FÍSICO
+        # =================================================
+        arr_corr = arr - OFFSET_FISICO
 
-        plt.pause(0.001)
+        # =================================================
+        # ESTATÍSTICAS (ADC)
+        # =================================================
+        min_val = np.min(arr_corr)
+        max_val = np.max(arr_corr)
 
-    except KeyboardInterrupt:
-        print("Encerrado.")
-        break
-    except Exception as e:
-        print("Erro:", e)
+        vpp_adc = max_val - min_val
+        vmed_adc = np.mean(arr_corr)
+        vrms_adc = np.sqrt(np.mean(arr_corr ** 2))
+
+        # =================================================
+        # CONVERSÃO PARA VOLTS
+        # ======================================
