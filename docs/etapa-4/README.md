@@ -1,4 +1,4 @@
-# Etapa 4 – Apresentação Final do Projeto
+# Etapa 4
 
 Este diretório corresponde à **Etapa 4 (última etapa)** do desenvolvimento do **Osciloscópio Portátil**, reunindo todos os materiais finais de entrega do projeto. Aqui estão consolidados os documentos técnicos, resultados de testes, apresentação do produto e o material de demonstração.
 
