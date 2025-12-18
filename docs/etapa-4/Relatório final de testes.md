@@ -107,7 +107,7 @@ Os testes confirmaram o funcionamento correto do sistema para frequências de at
 
 O colega estava visualizando sua onda PWM com alto Duty Cycle.
 
-![Teste com externo](docs/etapa-4/imagens/Validacao_externo.jpeg)
+![Teste com externo](imagens/Validacao_externo.jpeg)
 
 
 
