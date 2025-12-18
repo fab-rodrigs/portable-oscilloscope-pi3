@@ -1,4 +1,4 @@
-# Documentação Técnica do Osciloscópio Portátil
+# Documentação Completa do Osciloscópio Portátil
 
 ## Introdução
 
