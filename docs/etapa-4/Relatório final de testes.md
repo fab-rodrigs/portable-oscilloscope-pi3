@@ -103,6 +103,10 @@ Os testes experimentais foram realizados utilizando:
 
 Os testes confirmaram o funcionamento correto do sistema para frequências de até 100 kHz, com boa concordância entre os valores medidos e os valores de referência.
 
+# Validação com externos
+
+
+
 ## Conclusão
 
 Após as correções implementadas, o sistema apresentou medições estáveis, coerentes e confiáveis, tanto em amplitude quanto em frequência. A separação clara entre correções físicas do sinal e ajustes gráficos foi fundamental para eliminar inconsistências observadas anteriormente, resultando em um osciloscópio embarcado funcional e validado experimentalmente.
