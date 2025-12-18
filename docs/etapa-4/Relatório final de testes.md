@@ -104,6 +104,7 @@ Os testes experimentais foram realizados utilizando:
 Os testes confirmaram o funcionamento correto do sistema para frequências de até 100 kHz, com boa concordância entre os valores medidos e os valores de referência.
 
 # Validação com externos
+![Diagrama de Blocos do Projeto](docs/etapa-4/Validacao_externo.jpeg)
 
 
 
